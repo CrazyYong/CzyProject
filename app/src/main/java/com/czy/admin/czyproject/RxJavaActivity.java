@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by admin on 2017/3/1.
- * RxJava类
+ * 用于测试RxJava类
  */
 
 public class RxJavaActivity extends Activity implements View.OnClickListener{

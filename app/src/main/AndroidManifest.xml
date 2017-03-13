@@ -19,6 +19,9 @@
         <activity
             android:name=".RxJavaActivity"
             />
+        <activity
+            android:name=".HttpActivity"
+            />
     </application>
 
 </manifest>

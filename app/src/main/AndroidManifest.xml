@@ -22,6 +22,9 @@
         <activity
             android:name=".Http.HttpActivity"
             />
+        <activity
+            android:name=".Gson.GsonActivity"
+            />
     </application>
 
 </manifest>

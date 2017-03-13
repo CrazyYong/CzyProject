@@ -23,7 +23,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by admin on 2017/3/1.
+ * Created by czy on 2017/3/1.
  * 用于测试RxJava类
  */
 
@@ -71,6 +71,8 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
     public void returnData(String name){
         httpData=name;
     }
+
+
 
     /**
      * 切换线程

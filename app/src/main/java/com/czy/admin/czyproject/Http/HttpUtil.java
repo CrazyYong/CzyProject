@@ -1,16 +1,19 @@
 package com.czy.admin.czyproject.Http;
 
+import android.util.Log;
+
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by cmx on 2017/3/13.
+ * Created by czy on 2017/3/13.
  */
 
 public class HttpUtil implements HttpResultInterface {
 
-    private static final String REMOTE_CONFIG_URL_GAMEPAD1 = "http://211.170.59.204:18080/ota/company/innoplay/project/tim/device/gamepad1/firmware/latest";
+    public static final String REMOTE_CONFIG_URL_GAMEPAD1 = "http://211.170.59.204:18080/ota/company/innoplay/project/tim/device/gamepad1/firmware/latest";
+    public static final String XML_URL="http://app.cheyooh.com/i.ashx?m=ad_home_banner&uid=f09d02040e7842ceaf1591a66f014d67&location_cityid=95&ver=4.3.0&channel=C172%E4%B9%90%E8%A7%86%E5%95%86%E5%BA%97v4.3.1&key=db3544284f0e6cab65dfadd51f12e2c3&tagversion=va&checkKey=e18de8c8a5adf7eee51204f46f09963a&timestamp=0";
     private HttpResultInterface resultInterface =null;
 
 
@@ -43,11 +46,29 @@ public class HttpUtil implements HttpResultInterface {
      inputStream.read(data);//InputString流读到data中
         String message = new String(data);//将data转换为String类型
         resultInterface.returnData(message);
-
+        Log.i("CZYAPP",message);
    }catch (Exception e){
 
         }
+    }
 
+    private  InputStream testHttpConnectionBySAX(){
+        InputStream inputStream=null;
+        try {
+            URL url = new URL(REMOTE_CONFIG_URL_GAMEPAD1);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.connect();
+            httpURLConnection.setConnectTimeout(4000);
+            httpURLConnection.setReadTimeout(4000);
+            inputStream = httpURLConnection.getInputStream();
+            byte data[] = new byte[256];
+            inputStream.read(data);//InputString流读到data中
+            String message = new String(data);//将data转换为String类型
+            resultInterface.returnData(message);
+        }catch (Exception e){
 
+        }
+
+        return inputStream;
     }
 }

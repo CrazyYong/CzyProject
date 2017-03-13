@@ -7,4 +7,5 @@ package com.czy.admin.czyproject.Http;
 public interface HttpResultInterface {
 
     void returnData (String name);
+
 }

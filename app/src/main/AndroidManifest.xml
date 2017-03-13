@@ -17,10 +17,10 @@
         </activity>
 
         <activity
-            android:name=".RxJavaActivity"
+            android:name=".RxJava.RxJavaActivity"
             />
         <activity
-            android:name=".HttpActivity"
+            android:name=".Http.HttpActivity"
             />
     </application>
 

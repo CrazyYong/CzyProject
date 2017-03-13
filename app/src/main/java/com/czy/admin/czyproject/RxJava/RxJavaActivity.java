@@ -1,10 +1,14 @@
-package com.czy.admin.czyproject;
+package com.czy.admin.czyproject.RxJava;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.czy.admin.czyproject.Http.HttpResultInterface;
+import com.czy.admin.czyproject.Http.HttpUtil;
+import com.czy.admin.czyproject.R;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -23,10 +27,13 @@ import io.reactivex.schedulers.Schedulers;
  * 用于测试RxJava类
  */
 
-public class RxJavaActivity extends Activity implements View.OnClickListener{
+public class RxJavaActivity extends Activity implements View.OnClickListener,HttpResultInterface {
     private Button rxjava_scheduler_btn;
     private Button rxjava_error_btn;
     private Button rxjava_map_btn;
+
+    private HttpUtil httpUtil =null;
+    private String  httpData = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,7 @@ public class RxJavaActivity extends Activity implements View.OnClickListener{
         rxjava_scheduler_btn.setOnClickListener(this);
         rxjava_error_btn.setOnClickListener(this);
         rxjava_map_btn.setOnClickListener(this);
+        httpUtil = new HttpUtil(this);
     }
 
 
@@ -60,6 +68,10 @@ public class RxJavaActivity extends Activity implements View.OnClickListener{
         }
     }
 
+    public void returnData(String name){
+        httpData=name;
+    }
+
     /**
      * 切换线程
      */
@@ -69,7 +81,8 @@ public class RxJavaActivity extends Activity implements View.OnClickListener{
             public void subscribe(FlowableEmitter<String> e) throws Exception {
                 e.onNext("将会在3秒后显示");
                 Thread.sleep(3000);
-                e.onNext("ittianyu");
+                httpUtil.requestData();
+                e.onNext(httpData);
                 e.onComplete();
 
             }

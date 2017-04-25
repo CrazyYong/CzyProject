@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.czy.admin.czyproject">
 
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +25,12 @@
         </activity>
 
         <activity
+            android:name=".Http.Retrofit.RetrofitActivity"
+            />
+        <activity
+            android:name=".Http.OkHttp.OkHttpActivity"
+            />
+        <activity
             android:name=".RxJava.RxJavaActivity"
             />
         <activity
@@ -24,6 +38,9 @@
             />
         <activity
             android:name=".Gson.GsonActivity"
+            />
+        <activity
+            android:name=".FileOperate.FileOperateActivity"
             />
     </application>
 

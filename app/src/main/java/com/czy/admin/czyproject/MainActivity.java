@@ -7,14 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
 import com.czy.admin.czyproject.Gson.GsonActivity;
 import com.czy.admin.czyproject.Http.HttpActivity;
+import com.czy.admin.czyproject.Http.OkHttp.OkHttpActivity;
+import com.czy.admin.czyproject.Http.Retrofit.RetrofitActivity;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button main_rxjava_btn,main_http_btn,main_gson_btn;
+    private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_retrofit_btn,main_create_file_btn;
 
 
     @Override
@@ -25,10 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         main_rxjava_btn=(Button)findViewById(R.id.main_rxjava_btn);
         main_http_btn=(Button)findViewById(R.id.main_http_btn);
         main_gson_btn=(Button)findViewById(R.id.main_gson_btn);
+        main_okhttp_btn=(Button)findViewById(R.id.main_okhttp_btn);
+        main_retrofit_btn=(Button)findViewById(R.id.main_retrofit_btn);
+        main_create_file_btn=(Button)findViewById(R.id.main_create_file_btn);
 
         main_rxjava_btn.setOnClickListener(this);
         main_http_btn.setOnClickListener(this);
         main_gson_btn.setOnClickListener(this);
+        main_okhttp_btn.setOnClickListener(this);
+        main_retrofit_btn.setOnClickListener(this);
+        main_create_file_btn.setOnClickListener(this);
 
     }
 
@@ -50,6 +59,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_gson_btn:
                 Intent gsonIntent= new Intent(this,GsonActivity.class);
                 startActivity(gsonIntent);
+
+                break;
+            case R.id.main_okhttp_btn:
+                Intent okhttpIntent= new Intent(this,OkHttpActivity.class);
+                startActivity(okhttpIntent);
+                break;
+            case R.id.main_retrofit_btn:
+                Intent retrofitIntent= new Intent(this,RetrofitActivity.class);
+                startActivity(retrofitIntent);
+
+                break;
+            case R.id.main_create_file_btn:
+                Intent fileOperateIntent= new Intent(this,FileOperateActivity.class);
+                startActivity(fileOperateIntent);
 
                 break;
             default:

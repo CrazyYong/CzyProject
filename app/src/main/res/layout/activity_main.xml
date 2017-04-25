@@ -15,19 +15,39 @@
         android:id="@+id/main_rxjava_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Request"
+        android:text="RxJava测试"
         />
     <Button
         android:id="@+id/main_http_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HttpTest"
+        android:text="网络测试"
         />
     <Button
         android:id="@+id/main_gson_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GsonTest"
+        android:text="Gson测试"
+        />
+    <Button
+        android:id="@+id/main_okhttp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Okhttp测试"
+        />
+
+    <Button
+        android:id="@+id/main_retrofit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit测试"
+        />
+
+    <Button
+        android:id="@+id/main_create_file_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="创建一个文件夹"
         />
 
 </LinearLayout>

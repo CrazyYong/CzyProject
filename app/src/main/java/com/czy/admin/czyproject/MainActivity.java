@@ -13,11 +13,12 @@ import com.czy.admin.czyproject.Http.HttpActivity;
 import com.czy.admin.czyproject.Http.OkHttp.OkHttpActivity;
 import com.czy.admin.czyproject.Http.Retrofit.RetrofitActivity;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
+import com.czy.admin.czyproject.View.RecycleViewActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_retrofit_btn,main_create_file_btn;
+    private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_retrofit_btn,main_create_file_btn,main_recycler_view_btn;
 
 
     @Override
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         main_okhttp_btn=(Button)findViewById(R.id.main_okhttp_btn);
         main_retrofit_btn=(Button)findViewById(R.id.main_retrofit_btn);
         main_create_file_btn=(Button)findViewById(R.id.main_create_file_btn);
+        main_recycler_view_btn=(Button)findViewById(R.id.main_recycler_view_btn);
 
         main_rxjava_btn.setOnClickListener(this);
         main_http_btn.setOnClickListener(this);
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         main_okhttp_btn.setOnClickListener(this);
         main_retrofit_btn.setOnClickListener(this);
         main_create_file_btn.setOnClickListener(this);
+        main_recycler_view_btn.setOnClickListener(this);
 
     }
 
@@ -73,6 +76,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_create_file_btn:
                 Intent fileOperateIntent= new Intent(this,FileOperateActivity.class);
                 startActivity(fileOperateIntent);
+
+                break;
+            case  R.id.main_recycler_view_btn:
+                Intent recycleViewIntent= new Intent(this,RecycleViewActivity.class);
+                startActivity(recycleViewIntent);
 
                 break;
             default:

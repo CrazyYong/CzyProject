@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class HttpUtil implements HttpResultInterface {
 
-    public static final String REMOTE_CONFIG_URL_GAMEPAD1 = "http://211.170.59.204:18080/ota/company/innoplay/project/tim/device/gamepad1/firmware/latest";
+    public static final String REMOTE_CONFIG_URL_GAMEPAD1 = "http://ota.gamepadota.com:18081/api/device/15/firmware/latest";
     public static final String XML_URL="http://app.cheyooh.com/i.ashx?m=ad_home_banner&uid=f09d02040e7842ceaf1591a66f014d67&location_cityid=95&ver=4.3.0&channel=C172%E4%B9%90%E8%A7%86%E5%95%86%E5%BA%97v4.3.1&key=db3544284f0e6cab65dfadd51f12e2c3&tagversion=va&checkKey=e18de8c8a5adf7eee51204f46f09963a&timestamp=0";
     public static final String GIT_GSON="https://api.github.com";
     public static final String WEATHER_GSON="http://api.k780.com:88/?app=weather.future&weaid=1&&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";

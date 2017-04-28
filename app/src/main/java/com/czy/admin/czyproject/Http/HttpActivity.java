@@ -2,6 +2,7 @@ package com.czy.admin.czyproject.Http;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.czy.admin.czyproject.FileOperate.Tool;
 import com.czy.admin.czyproject.Http.SAX.SaxService;
 import com.czy.admin.czyproject.R;
 
@@ -50,7 +52,8 @@ public class HttpActivity extends Activity implements HttpResultInterface {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
-        PATH = HttpActivity.this.getCacheDir()+"/firmware/";
+        PATH =Environment.getExternalStorageDirectory()
+                .getPath() + "/" + "aaaaa"+ "/";
         btn_test = (Button) findViewById(R.id.btn_test);
         btn_sax=(Button)findViewById(R.id.btn_sax);
         btn_download=(Button)findViewById(R.id.btn_download);
@@ -101,7 +104,17 @@ public class HttpActivity extends Activity implements HttpResultInterface {
         btn_download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getfile("http://ota.gamepadota.com:18081/file/firmware/21",1);
+                Tool tool = new Tool();
+                tool.makeRootDirectory(PATH);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        getfile("http://ota.gamepadota.com:18081/file/firmware/54",1);
+                    }
+                }).start();
+
+
             }
         });
     }
@@ -121,7 +134,7 @@ public class HttpActivity extends Activity implements HttpResultInterface {
         {
             int count=0;
             URL url = new URL(downurl);
-
+            Log.i("CZYAPP","进来了——————————"+downurl);
             HttpURLConnection conection = (HttpURLConnection) url.openConnection();
             conection.connect();
             conection.setConnectTimeout(4000);
@@ -129,6 +142,7 @@ public class HttpActivity extends Activity implements HttpResultInterface {
 
             // download the file
             InputStream input = conection.getInputStream();
+
             File dir = new File(PATH);
             File file = null;
             if (padnum==1) {

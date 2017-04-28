@@ -42,6 +42,9 @@
         <activity
             android:name=".FileOperate.FileOperateActivity"
             />
+        <activity
+            android:name=".View.RecycleViewActivity"
+            />
     </application>
 
 </manifest>

@@ -3,7 +3,6 @@ package com.czy.admin.czyproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,34 +10,45 @@ import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
 import com.czy.admin.czyproject.Gson.GsonActivity;
 import com.czy.admin.czyproject.Http.HttpActivity;
 import com.czy.admin.czyproject.Http.OkHttp.OkHttpActivity;
-import com.czy.admin.czyproject.Http.Retrofit.RetrofitActivity;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
 import com.czy.admin.czyproject.View.RecycleViewActivity;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
 
-    private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_retrofit_btn,main_create_file_btn,main_recycler_view_btn;
+    private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_create_file_btn,main_recycler_view_btn;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initView() {
         main_rxjava_btn=(Button)findViewById(R.id.main_rxjava_btn);
         main_http_btn=(Button)findViewById(R.id.main_http_btn);
         main_gson_btn=(Button)findViewById(R.id.main_gson_btn);
         main_okhttp_btn=(Button)findViewById(R.id.main_okhttp_btn);
-        main_retrofit_btn=(Button)findViewById(R.id.main_retrofit_btn);
         main_create_file_btn=(Button)findViewById(R.id.main_create_file_btn);
         main_recycler_view_btn=(Button)findViewById(R.id.main_recycler_view_btn);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
 
         main_rxjava_btn.setOnClickListener(this);
         main_http_btn.setOnClickListener(this);
         main_gson_btn.setOnClickListener(this);
         main_okhttp_btn.setOnClickListener(this);
-        main_retrofit_btn.setOnClickListener(this);
         main_create_file_btn.setOnClickListener(this);
         main_recycler_view_btn.setOnClickListener(this);
 
@@ -67,11 +77,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_okhttp_btn:
                 Intent okhttpIntent= new Intent(this,OkHttpActivity.class);
                 startActivity(okhttpIntent);
-                break;
-            case R.id.main_retrofit_btn:
-                Intent retrofitIntent= new Intent(this,RetrofitActivity.class);
-                startActivity(retrofitIntent);
-
                 break;
             case R.id.main_create_file_btn:
                 Intent fileOperateIntent= new Intent(this,FileOperateActivity.class);

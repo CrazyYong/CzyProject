@@ -24,5 +24,11 @@
         android:layout_height="wrap_content"
         android:text="下载某一文件并保存到本地"
         />
+    <Button
+        android:id="@+id/retrofit_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="retrofit测试"
+        />
 
 </LinearLayout>

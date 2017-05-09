@@ -11,13 +11,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.czy.admin.czyproject.FileOperate.Tool;
+import com.czy.admin.czyproject.Http.Retrofit.ApiFactory;
 import com.czy.admin.czyproject.Http.Retrofit.Info;
 import com.czy.admin.czyproject.Http.Retrofit.RetrofitUtils;
 import com.czy.admin.czyproject.Http.SAX.SaxService;
 import com.czy.admin.czyproject.R;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -38,10 +42,12 @@ public class HttpActivity extends Activity implements HttpResultInterface {
     private Button btn_sax;
     private Button btn_download;
     private Button retrofit_test;
+    private Button okHttp_test;
     private HttpUtil httpUtil =null;
     private static  String PATH;
     private static final String NEWGAMEPADE ="newremote.bin";
     private static final String NEWDONGLE ="newdongle.bin";
+    private OkHttpClient mOkHttpClient;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -65,6 +71,7 @@ public class HttpActivity extends Activity implements HttpResultInterface {
         btn_sax=(Button)findViewById(R.id.btn_sax);
         btn_download=(Button)findViewById(R.id.btn_download);
         retrofit_test=(Button)findViewById(R.id.retrofit_test);
+        okHttp_test=(Button)findViewById(R.id.okHttp_test);
         httpUtil = new HttpUtil(this);
 
         btn_sax.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +139,13 @@ public class HttpActivity extends Activity implements HttpResultInterface {
                 requestByGet();
             }
         });
+
+        okHttp_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OkhttpGetByGet();
+            }
+        });
     }
 
     public void returnData(String name){
@@ -141,8 +155,46 @@ public class HttpActivity extends Activity implements HttpResultInterface {
         handler.sendMessage(msg);
 
     }
+    /**
+     * OkHttp  get请求
+     */
+    private void OkhttpGetByGet(){
+
+       //创建okHttpClient对象
+        mOkHttpClient = new OkHttpClient();
+        //创建一个Request
+        final Request request = new Request.Builder()
+                .url("https://api.github.com")
+                .build();
+        com.squareup.okhttp.Call call = mOkHttpClient.newCall(request);
+        call.enqueue(new com.squareup.okhttp.Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "请求失败", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(final com.squareup.okhttp.Response response) throws IOException {
+                final String res = response.body().string();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "请求成功:"+res, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+    }
 
 
+    /**
+     * Retrofit  get请求
+     */
     private void requestByGet(){
 
         Call<Info> call = RetrofitUtils.getInstance().get();

@@ -35,7 +35,7 @@ public class RetrofitUtils {
                 if (retrofit == null) {
                     retrofit = new Retrofit.Builder()
                             .baseUrl(baseUrl)
-                            .addConverterFactory(GsonConverterFactory.create())
+                            .addConverterFactory(GsonConverterFactory.create())//Gson转换器
                             .build();
                     iServer = retrofit.create(IRetrofitServer.class);
                 }

@@ -17,12 +17,6 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
-/**
- * =====作者=====
- * 许英俊
- * =====时间=====
- * 2016/11/3.
- */
 public class RetrofitUtils {
 
     private static final String baseUrl = "http://japi.juhe.cn/joke/content/";

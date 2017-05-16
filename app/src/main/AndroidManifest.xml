@@ -45,6 +45,12 @@
         <activity
             android:name=".View.RecycleViewActivity"
             />
+        <activity
+            android:name=".AsyncHandler.HandlerActivity"
+            />
+        <activity
+            android:name=".AsyncHandler.AsyncTaskActivity"
+            />
     </application>
 
 </manifest>

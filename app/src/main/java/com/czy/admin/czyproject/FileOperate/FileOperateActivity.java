@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.czy.admin.czyproject.R;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * Created by czy on 2017/4/25.
  */
@@ -31,8 +34,10 @@ public class FileOperateActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                getcontent();
+//                getcontent();
+                onStartFile();
             }
+
         });
     }
 
@@ -41,6 +46,18 @@ public class FileOperateActivity extends Activity {
         mFileName = (EditText) findViewById(R.id.et_fileName);
         mContent = (EditText) findViewById(R.id.et_content);
         mTest = (Button) findViewById(R.id.btn_test);
+    }
+
+    protected void onStartFile() {
+        File yygypath = this.getFilesDir();//this.getCacheDir();
+        String yygypathstr = yygypath.toString();
+        File file = new File(yygypath, "yygytest");
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     private void getcontent() {

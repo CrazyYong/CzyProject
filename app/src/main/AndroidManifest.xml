@@ -51,6 +51,9 @@
         <activity
             android:name=".AsyncHandler.AsyncTaskActivity"
             />
+        <activity
+            android:name=".View.Fragment.FragmentMainActivity"
+            />
     </application>
 
 </manifest>

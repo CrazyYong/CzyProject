@@ -18,25 +18,27 @@ import java.lang.ref.WeakReference;
  * Created by czy on 2017/5/15.
  */
 
-public class HandlerActivity extends Activity{
+public class HandlerActivity extends Activity {
     private ProgressDialog pd;
 
     MyHandler myHandler = new MyHandler(this);
 
-    private Button btn_download,btn_send_message,btn_post_message;
-    private Handler handler = new Handler(){
+    private Button btn_download, btn_send_message, btn_post_message;
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case 0:
                     pd.dismiss();
                     break;
                 case 1:
-       int upperNum = msg.getData().getInt("upper");
-                    Toast.makeText(HandlerActivity.this, "值是多少--"+upperNum, Toast.LENGTH_SHORT).show();
+                    int upperNum = msg.getData().getInt("upper");
+                    Toast.makeText(HandlerActivity.this, "值是多少--" + upperNum, Toast.LENGTH_SHORT).show();
                     break;
+                case 2:
 
+                    break;
             }
 
         }
@@ -46,17 +48,18 @@ public class HandlerActivity extends Activity{
     /**
      * 利用弱引用构造的静态内部类
      */
-    public static class MyHandler extends Handler{
+    public static class MyHandler extends Handler {
 
         private WeakReference<HandlerActivity> reference;
 
         public MyHandler(HandlerActivity activity) {
             reference = new WeakReference<HandlerActivity>(activity);
         }
+
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case 0:
                     break;
                 case 1:
@@ -71,9 +74,9 @@ public class HandlerActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
-        btn_download=(Button)findViewById(R.id.btn_download);
-        btn_send_message=(Button)findViewById(R.id.btn_send_message);
-        btn_post_message=(Button)findViewById(R.id.btn_post_message);
+        btn_download = (Button) findViewById(R.id.btn_download);
+        btn_send_message = (Button) findViewById(R.id.btn_send_message);
+        btn_post_message = (Button) findViewById(R.id.btn_post_message);
         btn_download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,13 +94,13 @@ public class HandlerActivity extends Activity{
         btn_post_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                handler.post(new Runnable()
-                {
+                handler.post(new Runnable() {
                     @Override
-                    public void run()
-                    {
+                    public void run() {
                         Log.e("TAG", Thread.currentThread().getName());
                         btn_post_message.setText("恭喜你更新成功");
+
+
                     }
                 });
             }
@@ -106,7 +109,7 @@ public class HandlerActivity extends Activity{
 
 
     /**
-     *传输数据
+     * 传输数据
      */
     public void cal() {
         Bundle bundle = new Bundle();
@@ -122,14 +125,27 @@ public class HandlerActivity extends Activity{
     }
 
 
-    private void processThread(){
-        //构建一个下载进度条
-        pd= ProgressDialog.show(HandlerActivity.this, "下载文件", "正在下载……");
-        Log.i("tag", "processThread()-->"+Thread.currentThread().getName());
-        new Thread(){
+    /**
+     * 延迟Hnalder
+     */
+    private void postDelayeds() {
+        handler.postDelayed(new Runnable() {
             @Override
-            public void run(){
-                Log.i("tag", "run()-->"+Thread.currentThread().getName());
+            public void run() {
+                Toast.makeText(HandlerActivity.this, "postDelayed延迟2秒", Toast.LENGTH_SHORT).show();
+            }
+        }, 2000);
+    }
+
+
+    private void processThread() {
+        //构建一个下载进度条
+        pd = ProgressDialog.show(HandlerActivity.this, "下载文件", "正在下载……");
+        Log.i("tag", "processThread()-->" + Thread.currentThread().getName());
+        new Thread() {
+            @Override
+            public void run() {
+                Log.i("tag", "run()-->" + Thread.currentThread().getName());
                 //在新线程里执行长耗时方法
                 longTimeMethod();
                 //执行完毕后给handler发送一个空消息
@@ -137,13 +153,16 @@ public class HandlerActivity extends Activity{
             }
         }.start();
     }
+
     //模拟下载文件的长耗时方法
-    private void longTimeMethod(){
+    private void longTimeMethod() {
         try {
-            Log.i("tag", "longTimeMethod-->"+Thread.currentThread().getName());
+            Log.i("tag", "longTimeMethod-->" + Thread.currentThread().getName());
             Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+
 }

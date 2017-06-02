@@ -28,7 +28,7 @@ private Button btn_test;
         btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gsonBuilder();
+                gsonToGson();
             }
         });
     }

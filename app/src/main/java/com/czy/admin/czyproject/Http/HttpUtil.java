@@ -73,4 +73,7 @@ public class HttpUtil implements HttpResultInterface {
 
         return inputStream;
     }
+
+
+
 }

@@ -13,13 +13,15 @@ import com.czy.admin.czyproject.Gson.GsonActivity;
 import com.czy.admin.czyproject.Http.HttpActivity;
 import com.czy.admin.czyproject.Http.OkHttp.OkHttpActivity;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
+import com.czy.admin.czyproject.View.Fragment.FragmentMainActivity;
 import com.czy.admin.czyproject.View.RecycleViewActivity;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_create_file_btn,main_recycler_view_btn
-            ,main_handler_view_btn,main_async_btn;
+            ,main_handler_view_btn,main_async_btn
+            ,main_fragment_btn;
 
 
     @Override
@@ -42,6 +44,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_recycler_view_btn=(Button)findViewById(R.id.main_recycler_view_btn);
         main_handler_view_btn=(Button)findViewById(R.id.main_handler_view_btn);
         main_async_btn=(Button)findViewById(R.id.main_async_btn);
+        main_fragment_btn=(Button)findViewById(R.id.main_fragment_btn);
     }
 
     @Override
@@ -58,6 +61,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_recycler_view_btn.setOnClickListener(this);
         main_handler_view_btn.setOnClickListener(this);
         main_async_btn.setOnClickListener(this);
+        main_fragment_btn.setOnClickListener(this);
     }
 
     @Override
@@ -101,6 +105,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.main_async_btn:
                 Intent asyncActivity = new Intent(this, AsyncTaskActivity.class);
                 startActivity(asyncActivity);
+                break;
+            case R.id.main_fragment_btn:
+                Intent fragmentActivity = new Intent(this, FragmentMainActivity.class);
+                startActivity(fragmentActivity);
                 break;
             default:
                 break;

@@ -46,6 +46,12 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
         rxjava_error_btn.setOnClickListener(this);
         rxjava_map_btn.setOnClickListener(this);
         httpUtil = new HttpUtil(this);
+        rxjava_map_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 
@@ -89,8 +95,8 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
 
             }
         }, BackpressureStrategy.BUFFER)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io()) //事件产生在io线程
+                .observeOn(AndroidSchedulers.mainThread())//事件处理在mainThread线程
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
@@ -133,6 +139,7 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
                 Toast.makeText(RxJavaActivity.this, "onComplete", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
 
@@ -166,6 +173,7 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
                 Toast.makeText(RxJavaActivity.this,"拿到的值:"+s,Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     /**
@@ -187,7 +195,7 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
             public void onSubscribe(Subscription s) {
 
                 // request必须调用，否则 onNext不会被调用
-                s.request(Long.MAX_VALUE);
+                s.request(Long.MAX_VALUE); //背压作用
 
             }
 
@@ -208,4 +216,6 @@ public class RxJavaActivity extends Activity implements View.OnClickListener,Htt
 
         flowable.subscribe(subscriber);
     }
+
+
 }

@@ -8,20 +8,24 @@ import android.widget.Button;
 
 import com.czy.admin.czyproject.AsyncHandler.AsyncTaskActivity;
 import com.czy.admin.czyproject.AsyncHandler.HandlerActivity;
+import com.czy.admin.czyproject.ContentProvider.ContentProviderActivity;
 import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
 import com.czy.admin.czyproject.Gson.GsonActivity;
 import com.czy.admin.czyproject.Http.HttpActivity;
 import com.czy.admin.czyproject.Http.OkHttp.OkHttpActivity;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
+import com.czy.admin.czyproject.View.DrawerLayout.DrawerLayoutActivity;
+import com.czy.admin.czyproject.View.Fragment.FragmentDialog.FragmentDialogActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentMainActivity;
-import com.czy.admin.czyproject.View.RecycleViewActivity;
+import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private Button main_rxjava_btn,main_http_btn,main_gson_btn,main_okhttp_btn,main_create_file_btn,main_recycler_view_btn
             ,main_handler_view_btn,main_async_btn
-            ,main_fragment_btn;
+            ,main_fragment_btn,main_content_btn
+            ,main_dialog_fragment_btn,main_drawer_layout_btn;
 
 
     @Override
@@ -45,6 +49,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_handler_view_btn=(Button)findViewById(R.id.main_handler_view_btn);
         main_async_btn=(Button)findViewById(R.id.main_async_btn);
         main_fragment_btn=(Button)findViewById(R.id.main_fragment_btn);
+        main_content_btn=(Button)findViewById(R.id.main_content_btn);
+        main_dialog_fragment_btn=(Button)findViewById(R.id.main_dialog_fragment_btn);
+        main_drawer_layout_btn=(Button)findViewById(R.id.main_drawer_layout_btn);
     }
 
     @Override
@@ -62,6 +69,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_handler_view_btn.setOnClickListener(this);
         main_async_btn.setOnClickListener(this);
         main_fragment_btn.setOnClickListener(this);
+        main_content_btn.setOnClickListener(this);
+        main_dialog_fragment_btn.setOnClickListener(this);
+        main_drawer_layout_btn.setOnClickListener(this);
     }
 
     @Override
@@ -109,6 +119,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
             case R.id.main_fragment_btn:
                 Intent fragmentActivity = new Intent(this, FragmentMainActivity.class);
                 startActivity(fragmentActivity);
+                break;
+            case R.id.main_content_btn:
+                Intent contentActivity = new Intent(this, ContentProviderActivity.class);
+                startActivity(contentActivity);
+                break;
+            case R.id.main_dialog_fragment_btn:
+                Intent dialogActivity = new Intent(this, FragmentDialogActivity.class);
+                startActivity(dialogActivity);
+                break;
+            case R.id.main_drawer_layout_btn:
+                Intent drawerActivity = new Intent(this, DrawerLayoutActivity.class);
+                startActivity(drawerActivity);
                 break;
             default:
                 break;

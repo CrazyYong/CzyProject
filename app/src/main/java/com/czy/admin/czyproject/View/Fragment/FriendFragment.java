@@ -20,4 +20,10 @@ public class FriendFragment extends Fragment{
         return inflater.inflate(R.layout.fragment_friend, container, false);
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
 }

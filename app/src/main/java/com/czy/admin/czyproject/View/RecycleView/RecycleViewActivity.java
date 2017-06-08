@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.View;
+package com.czy.admin.czyproject.View.RecycleView;
 
 import android.app.Activity;
 import android.os.Bundle;

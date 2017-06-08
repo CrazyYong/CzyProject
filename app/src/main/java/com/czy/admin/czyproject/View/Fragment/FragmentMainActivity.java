@@ -30,8 +30,10 @@ public class FragmentMainActivity extends Activity implements View.OnClickListen
         mTabWeixin.setOnClickListener(this);
         mTabFriend.setOnClickListener(this);
 
-        // 设置默认的Fragment
-        setDefaultFragment();
+        if(savedInstanceState==null) {
+            // 设置默认的Fragment
+            setDefaultFragment();
+        }
     }
 
     private void setDefaultFragment()

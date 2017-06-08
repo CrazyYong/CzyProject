@@ -43,7 +43,7 @@
             android:name=".FileOperate.FileOperateActivity"
             />
         <activity
-            android:name=".View.RecycleViewActivity"
+            android:name=".View.RecycleView.RecycleViewActivity"
             />
         <activity
             android:name=".AsyncHandler.HandlerActivity"
@@ -53,6 +53,15 @@
             />
         <activity
             android:name=".View.Fragment.FragmentMainActivity"
+            />
+        <activity
+            android:name=".ContentProvider.ContentProviderActivity"
+            />
+        <activity
+            android:name=".View.Fragment.FragmentDialog.FragmentDialogActivity"
+            />
+        <activity
+            android:name=".View.DrawerLayout.DrawerLayoutActivity"
             />
     </application>
 

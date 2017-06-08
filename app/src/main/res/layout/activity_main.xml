@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.czy.admin.czyproject.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.czy.admin.czyproject.MainActivity">
-
+    >
     <Button
         android:id="@+id/main_rxjava_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RxJava测试"
+        android:textAllCaps="false"
         />
     <Button
         android:id="@+id/main_http_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="网络测试"
+        android:textAllCaps="false"
         />
     <Button
         android:id="@+id/main_gson_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gson测试"
+        android:textAllCaps="false"
         />
     <Button
         android:id="@+id/main_okhttp_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Okhttp测试"
+        android:textAllCaps="false"
         />
-
-
     <Button
         android:id="@+id/main_create_file_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="创建一个文件夹"
+        android:textAllCaps="false"
         />
 
     <Button
@@ -49,22 +56,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RecycleView测试"
+        android:textAllCaps="false"
         />
     <Button
         android:id="@+id/main_handler_view_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Handler测试"
+        android:textAllCaps="false"
         />
     <Button
         android:id="@+id/main_async_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="AsyncTask测试"
-        /><Button
+        android:textAllCaps="false"
+        />
+    <Button
     android:id="@+id/main_fragment_btn"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="fragment测试"
+        android:textAllCaps="false"
     />
-</LinearLayout>
+    <Button
+        android:id="@+id/main_content_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ContentProvider测试"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/main_dialog_fragment_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DialogFragment测试"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/main_drawer_layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DrawerLayout测试"
+        android:textAllCaps="false"
+        />
+    </LinearLayout>
+</ScrollView>

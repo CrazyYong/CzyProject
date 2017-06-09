@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+<Button
+    android:id="@+id/btn_retroift"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Retroift测试"
+    android:textAllCaps="false"
+    />
+    <Button
+        android:id="@+id/btn_okhttp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OkHtttp测试"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/btn_http"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HttpConnection测试"
+        android:textAllCaps="false"
+        />
+</LinearLayout>

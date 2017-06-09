@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,16 +25,13 @@
         </activity>
 
         <activity
-            android:name=".Http.Retrofit.RetrofitActivityTest"
-            />
-        <activity
-            android:name=".Http.OkHttp.OkHttpActivity"
+            android:name=".NetWork.OkHttp.OkHttpActivity"
             />
         <activity
             android:name=".RxJava.RxJavaActivity"
             />
         <activity
-            android:name=".Http.HttpActivity"
+            android:name=".NetWork.HttpConnection.HttpActivity"
             />
         <activity
             android:name=".Gson.GsonActivity"
@@ -46,10 +43,10 @@
             android:name=".View.RecycleView.RecycleViewActivity"
             />
         <activity
-            android:name=".AsyncHandler.HandlerActivity"
+            android:name=".ThreadWork.HandlerActivity"
             />
         <activity
-            android:name=".AsyncHandler.AsyncTaskActivity"
+            android:name=".ThreadWork.AsyncTaskActivity"
             />
         <activity
             android:name=".View.Fragment.FragmentMainActivity"
@@ -62,6 +59,21 @@
             />
         <activity
             android:name=".View.DrawerLayout.DrawerLayoutActivity"
+            />
+        <activity
+            android:name=".View.NavigationView.NavigationViewActivity"
+            />
+        <activity
+            android:name=".Activity.ViewActivity"
+            />
+        <activity
+            android:name=".View.MaterialDesign.MaterialDesignActivity"
+            />
+        <activity
+            android:name=".Activity.NetWorkActivity"
+            />
+        <activity
+            android:name=".Activity.ThreadWorkActivity"
             />
     </application>
 

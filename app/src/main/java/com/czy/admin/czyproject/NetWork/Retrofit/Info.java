@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.Http.Retrofit;
+package com.czy.admin.czyproject.NetWork.Retrofit;
 
 import java.util.List;
 
@@ -8,17 +8,10 @@ import java.util.List;
 
 public class Info {
 
-    @Override
-    public String toString() {
-        return "Info{" +
-                "error_code=" + error_code +
-                ", reason='" + reason + '\'' +
-                ", result=" + result +
-                '}';
-    }
-
     private int error_code;
+
     private String reason;
+
     private ResultBean result;
 
     public int getError_code() {
@@ -32,6 +25,16 @@ public class Info {
     public ResultBean getResult() {
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Info{" +
+                "error_code=" + error_code +
+                ", reason='" + reason + '\'' +
+                ", result=" + result +
+                '}';
+    }
+
 
     public static class ResultBean {
         @Override

@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.Http.Retrofit;
+package com.czy.admin.czyproject.NetWork.Retrofit;
 
 import java.util.Map;
 
@@ -38,12 +38,10 @@ public class RetrofitUtils {
         return iServer;
     }
 
-
     public interface IRetrofitServer {
 
         String getUrl = "list.from";
         String postUrl = "list.from";
-
         /**
          * 传递参数的Get请求
          * @param key

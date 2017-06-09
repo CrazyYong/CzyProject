@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.Http;
+package com.czy.admin.czyproject.NetWork.HttpConnection;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,10 +11,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.czy.admin.czyproject.FileOperate.Tool;
-import com.czy.admin.czyproject.Http.Retrofit.ApiFactory;
-import com.czy.admin.czyproject.Http.Retrofit.Info;
-import com.czy.admin.czyproject.Http.Retrofit.RetrofitUtils;
-import com.czy.admin.czyproject.Http.SAX.SaxService;
+import com.czy.admin.czyproject.NetWork.Retrofit.Info;
+import com.czy.admin.czyproject.NetWork.Retrofit.RetrofitUtils;
+import com.czy.admin.czyproject.NetWork.SAX.SaxService;
 import com.czy.admin.czyproject.R;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;

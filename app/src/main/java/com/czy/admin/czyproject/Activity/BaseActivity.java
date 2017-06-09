@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject;
+package com.czy.admin.czyproject.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;

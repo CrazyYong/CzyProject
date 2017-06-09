@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.czy.admin.czyproject.Http.HttpResultInterface;
-import com.czy.admin.czyproject.Http.HttpUtil;
+import com.czy.admin.czyproject.NetWork.HttpConnection.HttpResultInterface;
+import com.czy.admin.czyproject.NetWork.HttpConnection.HttpUtil;
 import com.czy.admin.czyproject.R;
 
 import org.reactivestreams.Subscriber;

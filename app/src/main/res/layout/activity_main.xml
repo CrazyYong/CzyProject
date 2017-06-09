@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.czy.admin.czyproject.MainActivity">
+    tools:context="com.czy.admin.czyproject.Activity.MainActivity">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,17 +16,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     >
     <Button
+        android:id="@+id/main_view_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="各种控件测试"
+        android:textAllCaps="false"
+        />
+    <Button
         android:id="@+id/main_rxjava_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RxJava测试"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/main_http_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="网络测试"
         android:textAllCaps="false"
         />
     <Button
@@ -37,48 +37,12 @@
         android:textAllCaps="false"
         />
     <Button
-        android:id="@+id/main_okhttp_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Okhttp测试"
-        android:textAllCaps="false"
-        />
-    <Button
         android:id="@+id/main_create_file_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="创建一个文件夹"
         android:textAllCaps="false"
         />
-
-    <Button
-        android:id="@+id/main_recycler_view_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RecycleView测试"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/main_handler_view_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Handler测试"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/main_async_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AsyncTask测试"
-        android:textAllCaps="false"
-        />
-    <Button
-    android:id="@+id/main_fragment_btn"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="fragment测试"
-        android:textAllCaps="false"
-    />
     <Button
         android:id="@+id/main_content_btn"
         android:layout_width="match_parent"
@@ -87,17 +51,17 @@
         android:textAllCaps="false"
         />
     <Button
-        android:id="@+id/main_dialog_fragment_btn"
+        android:id="@+id/main_newwork_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DialogFragment测试"
+        android:text="网络编程"
         android:textAllCaps="false"
         />
     <Button
-        android:id="@+id/main_drawer_layout_btn"
+        android:id="@+id/main_thread_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DrawerLayout测试"
+        android:text="多线程"
         android:textAllCaps="false"
         />
     </LinearLayout>

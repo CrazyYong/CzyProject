@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.Http.OkHttp;
+package com.czy.admin.czyproject.NetWork.OkHttp;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -40,22 +40,11 @@ public class OkHttpActivity extends Activity{
         });
     }
 
-    /**
-     * post请求 带参数
-     */
-    private void getByPost(){
-
-
-    }
-
-
-
 
     /**
      * get请求
      */
     private void getByGet(){
-
 
         //创建一个Request
         final Request request = new Request.Builder()

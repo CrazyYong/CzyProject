@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.AsyncHandler;
+package com.czy.admin.czyproject.ThreadWork;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -64,7 +64,6 @@ public class HandlerActivity extends Activity {
                     break;
                 case 1:
                     break;
-
             }
 
         }

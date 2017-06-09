@@ -1,10 +1,10 @@
 package com.czy.admin.czyproject.View.DrawerLayout;
 
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
@@ -22,7 +22,7 @@ import java.util.List;
  * Created by czy on 2017/6/7.
  */
 
-public class DrawerLayoutActivity extends FragmentActivity {
+public class DrawerLayoutActivity extends Activity {
     private DrawerLayout drawerLayout;
     private RelativeLayout rightLayout;
     private List<ContentModel> list;
@@ -41,7 +41,7 @@ public class DrawerLayoutActivity extends FragmentActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         rightLayout = (RelativeLayout) findViewById(R.id.right);
         listView = (ListView) findViewById(R.id.left_listview);
-        fm = getSupportFragmentManager();
+        fm = getFragmentManager();
 
         initData();
         adapter = new ContentAdapter(this, list);

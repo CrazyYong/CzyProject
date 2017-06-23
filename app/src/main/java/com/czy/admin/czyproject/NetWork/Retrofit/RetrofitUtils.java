@@ -60,6 +60,13 @@ public class RetrofitUtils {
         Call<Info> get();
 
         /**
+         * 带path的参数请求
+         * @return
+         */
+        @GET("{path}")
+        Call<Info> get(@Path("path") String path,@Query("key") String key, @Query("sort") String sort, @Query("time") String time);
+
+        /**
          * 传递Map键值对的Get请求
          * @param params
          * @return
@@ -134,5 +141,7 @@ public class RetrofitUtils {
         @FormUrlEncoded
         @POST("{path}")
         Call<Info> post(@Path("path") String path, @Field("key") String key, @Field("sort") String sort, @Field("time") String time);
+
+
     }
 }

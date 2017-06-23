@@ -2,15 +2,19 @@ package com.czy.admin.czyproject.Gson;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.czy.admin.czyproject.Model.EventModel;
 import com.czy.admin.czyproject.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,7 +32,8 @@ private Button btn_test;
         btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gsonToGson();
+//                gsonToGson();
+                gsonToGsonNEW("1","1","1","1");
             }
         });
     }
@@ -102,5 +107,31 @@ private Button btn_test;
                 .create();
         User user = new User("怪盗kidou","","");
         Toast.makeText(GsonActivity.this,gson.toJson(user),Toast.LENGTH_SHORT).show();
+    }
+
+
+    /**
+     * 构建一个嵌套的 json
+     * @param eventName
+     * @param status
+     * @param fwVersion
+     * @param TVAPP_Version
+     * @return
+     */
+    public String  gsonToGsonNEW(String eventName, String status, String fwVersion, String TVAPP_Version){
+        Gson gson = new Gson();
+        EventModel.Body body = new EventModel.Body(eventName,status,"app");
+        EventModel eventModel = new EventModel(getTime(),fwVersion,TVAPP_Version,body);
+        String jsonString = gson.toJson(eventModel);
+        Toast.makeText(this,jsonString,Toast.LENGTH_SHORT).show();
+        Log.i("CZYAPP",jsonString);
+        return jsonString;
+    }
+
+    public  String getTime(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+        Date curDate= new Date(System.currentTimeMillis());//获取当前时间
+        String  str = formatter.format(curDate);
+        return str;
     }
 }

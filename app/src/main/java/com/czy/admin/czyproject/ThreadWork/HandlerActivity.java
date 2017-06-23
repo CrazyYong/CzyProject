@@ -34,7 +34,8 @@ public class HandlerActivity extends Activity {
                     break;
                 case 1:
                     int upperNum = msg.getData().getInt("upper");
-                    Toast.makeText(HandlerActivity.this, "值是多少--" + upperNum, Toast.LENGTH_SHORT).show();
+                    int obj = (Integer) msg.obj;
+                    Toast.makeText(HandlerActivity.this, "值是多少--" +obj, Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
 
@@ -116,7 +117,7 @@ public class HandlerActivity extends Activity {
         //创建消息
         Message message = new Message();
         message.what = 1;
-//       message.obj=2; 传输一个对象
+         message.obj=3; // 传输一个对象
 //        Message msg = handler.obtainMessage(); 可以复用系统的message，不用重新New一个也可以
         message.setData(bundle);
         //发送消息

@@ -58,7 +58,7 @@ private Button btn_retroift,btn_okhttp,btn_http;
      * Retrofit  get请求
      */
     private void requestByGet(){
-        Call<Info> call = RetrofitUtils.getInstance().get();
+        Call<Info> call = RetrofitUtils.getInstance().get("list.from","488c65f3230c0280757b50686d1f1cd5","asc","1418816972");
         call.enqueue(new Callback<Info>() {
             @Override
             public void onResponse(Call<Info> call, Response<Info> response) {

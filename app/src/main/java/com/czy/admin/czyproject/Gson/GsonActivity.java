@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.czy.admin.czyproject.Model.EventModel;
+//import com.czy.admin.czyproject.Model.EventModel;
 import com.czy.admin.czyproject.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,7 +33,7 @@ private Button btn_test;
             @Override
             public void onClick(View view) {
 //                gsonToGson();
-                gsonToGsonNEW("1","1","1","1");
+//                gsonToGsonNEW("1","1","1","1");
             }
         });
     }
@@ -110,23 +110,23 @@ private Button btn_test;
     }
 
 
-    /**
-     * 构建一个嵌套的 json
-     * @param eventName
-     * @param status
-     * @param fwVersion
-     * @param TVAPP_Version
-     * @return
-     */
-    public String  gsonToGsonNEW(String eventName, String status, String fwVersion, String TVAPP_Version){
-        Gson gson = new Gson();
-        EventModel.Body body = new EventModel.Body(eventName,status,"app");
-        EventModel eventModel = new EventModel(getTime(),fwVersion,TVAPP_Version,body);
-        String jsonString = gson.toJson(eventModel);
-        Toast.makeText(this,jsonString,Toast.LENGTH_SHORT).show();
-        Log.i("CZYAPP",jsonString);
-        return jsonString;
-    }
+//    /**
+//     * 构建一个嵌套的 json
+//     * @param eventName
+//     * @param status
+//     * @param fwVersion
+//     * @param TVAPP_Version
+//     * @return
+//     */
+//    public String  gsonToGsonNEW(String eventName, String status, String fwVersion, String TVAPP_Version){
+//        Gson gson = new Gson();
+//        EventModel.Body body = new EventModel.Body(eventName,status,"app");
+//        EventModel eventModel = new EventModel(getTime(),fwVersion,TVAPP_Version,body);
+//        String jsonString = gson.toJson(eventModel);
+//        Toast.makeText(this,jsonString,Toast.LENGTH_SHORT).show();
+//        Log.i("CZYAPP",jsonString);
+//        return jsonString;
+//    }
 
     public  String getTime(){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");

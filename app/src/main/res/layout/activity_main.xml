@@ -64,5 +64,12 @@
         android:text="多线程"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/main_proprety_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="性能"
+        android:textAllCaps="false"
+        />
     </LinearLayout>
 </ScrollView>

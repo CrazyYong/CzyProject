@@ -21,6 +21,11 @@ public class UtilsTool {
         context.startActivity(intent);
     }
 
+    /*打印日志*/
+    public static void Log(String msg) {
+        android.util.Log.e(CzyCommon.TAG, msg);
+    }
+
 
     public static void sendError(String str, Handler handler){
         Message message = handler.obtainMessage();

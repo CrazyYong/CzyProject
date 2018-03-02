@@ -7,6 +7,7 @@ import android.widget.Button;
 import com.czy.admin.czyproject.ContentProvider.ContentProviderActivity;
 import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
 import com.czy.admin.czyproject.Gson.GsonActivity;
+import com.czy.admin.czyproject.Proprety.PropretyActivity;
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
 import com.czy.admin.czyproject.Utils.UtilsTool;
@@ -15,7 +16,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private Button main_rxjava_btn,main_gson_btn,main_create_file_btn
            ,main_content_btn
-            ,main_view_btn,main_newwork_btn,main_thread_btn;
+            ,main_view_btn,main_newwork_btn,main_thread_btn,main_proprety_btn;
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -35,6 +36,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_view_btn=(Button)findViewById(R.id.main_view_btn);
         main_newwork_btn=(Button)findViewById(R.id.main_newwork_btn);
         main_thread_btn=(Button)findViewById(R.id.main_thread_btn);
+        main_proprety_btn=(Button)findViewById(R.id.main_proprety_btn);
     }
 
     @Override
@@ -47,6 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_view_btn.setOnClickListener(this);
         main_newwork_btn.setOnClickListener(this);
         main_thread_btn.setOnClickListener(this);
+        main_proprety_btn.setOnClickListener(this);
     }
 
     @Override
@@ -72,6 +75,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.main_thread_btn:
                 UtilsTool.goActivity(this,ThreadWorkActivity.class);
+                break;
+            case R.id.main_proprety_btn:
+                UtilsTool.goActivity(this,PropretyActivity.class);
                 break;
             default:
                 break;

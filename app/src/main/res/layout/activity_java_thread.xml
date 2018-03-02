@@ -2,26 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<Button
+    android:id="@+id/btn_create1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="创建方式一"
+    android:textAllCaps="false"
+    />
     <Button
-        android:id="@+id/btn_handler"
+        android:id="@+id/btn_create2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Handler测试"
+        android:text="创建方式二"
         android:textAllCaps="false"
         />
     <Button
-        android:id="@+id/btn_async"
+        android:id="@+id/btn_create3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AyyncTask测试"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/btn_java_thread"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Java多线程"
+        android:text="创建方式三"
         android:textAllCaps="false"
         />
 </LinearLayout>

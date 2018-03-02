@@ -73,8 +73,12 @@
             android:name=".Activity.NetWorkActivity"
             />
         <activity
-            android:name=".Activity.ThreadWorkActivity"
+        android:name=".Activity.ThreadWorkActivity"
+        />
+        <activity
+            android:name=".Proprety.PropretyActivity"
             />
+        <activity android:name=".ThreadWork.JavaThreadActivity"/>
     </application>
 
 </manifest>

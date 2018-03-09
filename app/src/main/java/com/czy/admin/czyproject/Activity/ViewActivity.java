@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.Utils.UtilsTool;
+import com.czy.admin.czyproject.View.CustomView.MyFirstCustomerViewActivity;
 import com.czy.admin.czyproject.View.DrawerLayout.DrawerLayoutActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentDialog.FragmentDialogActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentMainActivity;
@@ -21,7 +22,7 @@ import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 
 public class ViewActivity extends Activity implements  View.OnClickListener{
     private Button btn_view_recycle,btn_fragment,btn_dialog_fragment,btn_drawerlayout
-            ,btn_navigation,btn_material;
+            ,btn_navigation,btn_material,btn_customer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_drawerlayout=(Button)findViewById(R.id.btn_drawerlayout);
         btn_navigation=(Button)findViewById(R.id.btn_navigation);
         btn_material=(Button)findViewById(R.id.btn_material);
+        btn_customer=(Button)findViewById(R.id.btn_customer);
 
         btn_view_recycle.setOnClickListener(this);
         btn_fragment.setOnClickListener(this);
@@ -40,6 +42,7 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_drawerlayout.setOnClickListener(this);
         btn_navigation.setOnClickListener(this);
         btn_material.setOnClickListener(this);
+        btn_customer.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +65,9 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
                 break;
             case R.id.btn_material:
                 UtilsTool.goActivity(this,MaterialDesignActivity.class);
+                break;
+            case R.id.btn_customer:
+                UtilsTool.goActivity(this,MyFirstCustomerViewActivity.class);
                 break;
             default:
                 break;

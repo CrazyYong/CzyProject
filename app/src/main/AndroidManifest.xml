@@ -79,6 +79,8 @@
             android:name=".Proprety.PropretyActivity"
             />
         <activity android:name=".ThreadWork.JavaThreadActivity"/>
+
+        <activity android:name=".View.CustomView.MyFirstCustomerViewActivity"/>
     </application>
 
 </manifest>

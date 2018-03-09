@@ -46,4 +46,11 @@
         android:text="Material风格"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/btn_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义控件"
+        android:textAllCaps="false"
+        />
 </LinearLayout>

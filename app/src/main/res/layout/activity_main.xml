@@ -16,6 +16,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     >
     <Button
+        android:id="@+id/main_components_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="四大组件"
+        android:textAllCaps="false"
+        />
+    <Button
         android:id="@+id/main_view_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

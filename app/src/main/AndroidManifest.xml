@@ -81,6 +81,8 @@
         <activity android:name=".ThreadWork.JavaThreadActivity"/>
 
         <activity android:name=".View.CustomView.MyFirstCustomerViewActivity"/>
+        <activity android:name=".FourComponents.Service.ServiceActivity"/>
+        <service android:name=".FourComponents.Service.MyService"/>
     </application>
 
 </manifest>

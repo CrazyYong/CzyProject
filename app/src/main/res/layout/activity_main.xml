@@ -78,5 +78,12 @@
         android:text="性能"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/main_ipc_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IPC"
+        android:textAllCaps="false"
+        />
     </LinearLayout>
 </ScrollView>

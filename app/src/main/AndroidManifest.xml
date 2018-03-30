@@ -81,8 +81,20 @@
         <activity android:name=".ThreadWork.JavaThreadActivity"/>
 
         <activity android:name=".View.CustomView.MyFirstCustomerViewActivity"/>
+
         <activity android:name=".FourComponents.Service.ServiceActivity"/>
+
         <service android:name=".FourComponents.Service.MyService"/>
+
+        <activity android:name=".FourComponents.Activity.FirstActivity"
+            />
+
+        <activity android:name=".FourComponents.Activity.SecondActivity"/>
+        <activity android:name=".FourComponents.FourComponents"/>
+
+        <service android:name=".IPC.MessageService" android:process=":remote"/>
+
+        <activity android:name=".IPC.MessengerActivity"/>
     </application>
 
 </manifest>

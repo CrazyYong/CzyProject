@@ -6,8 +6,10 @@ import android.widget.Button;
 
 import com.czy.admin.czyproject.ContentProvider.ContentProviderActivity;
 import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
+import com.czy.admin.czyproject.FourComponents.FourComponents;
 import com.czy.admin.czyproject.FourComponents.Service.ServiceActivity;
 import com.czy.admin.czyproject.Gson.GsonActivity;
+import com.czy.admin.czyproject.IPC.MessengerActivity;
 import com.czy.admin.czyproject.Proprety.PropretyActivity;
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
@@ -17,7 +19,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private Button main_rxjava_btn,main_gson_btn,main_create_file_btn
            ,main_content_btn
-            ,main_view_btn,main_newwork_btn,main_thread_btn,main_proprety_btn,main_components_btn;
+            ,main_view_btn,main_newwork_btn,main_thread_btn,main_proprety_btn,main_components_btn,main_ipc_btn;
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -39,6 +41,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_thread_btn=(Button)findViewById(R.id.main_thread_btn);
         main_proprety_btn=(Button)findViewById(R.id.main_proprety_btn);
         main_components_btn=(Button)findViewById(R.id.main_components_btn);
+        main_ipc_btn=(Button)findViewById(R.id.main_ipc_btn);
     }
 
     @Override
@@ -53,6 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_thread_btn.setOnClickListener(this);
         main_proprety_btn.setOnClickListener(this);
         main_components_btn.setOnClickListener(this);
+        main_ipc_btn.setOnClickListener(this);
     }
 
     @Override
@@ -83,7 +87,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 UtilsTool.goActivity(this,PropretyActivity.class);
                 break;
             case R.id.main_components_btn:
-                UtilsTool.goActivity(this, ServiceActivity.class);
+                UtilsTool.goActivity(this, FourComponents.class);
+                break;
+            case R.id.main_ipc_btn:
+                UtilsTool.goActivity(this, MessengerActivity.class);
                 break;
             default:
                 break;

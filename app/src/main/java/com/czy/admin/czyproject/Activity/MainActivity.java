@@ -7,9 +7,9 @@ import android.widget.Button;
 import com.czy.admin.czyproject.ContentProvider.ContentProviderActivity;
 import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
 import com.czy.admin.czyproject.FourComponents.FourComponents;
-import com.czy.admin.czyproject.FourComponents.Service.ServiceActivity;
 import com.czy.admin.czyproject.Gson.GsonActivity;
-import com.czy.admin.czyproject.IPC.MessengerActivity;
+import com.czy.admin.czyproject.IPC.IPCActivity;
+import com.czy.admin.czyproject.IPC.Messager.MessengerActivity;
 import com.czy.admin.czyproject.Proprety.PropretyActivity;
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.RxJava.RxJavaActivity;
@@ -90,7 +90,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 UtilsTool.goActivity(this, FourComponents.class);
                 break;
             case R.id.main_ipc_btn:
-                UtilsTool.goActivity(this, MessengerActivity.class);
+                UtilsTool.goActivity(this, IPCActivity.class);
                 break;
             default:
                 break;

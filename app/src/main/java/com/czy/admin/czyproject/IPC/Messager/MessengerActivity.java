@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.IPC;
+package com.czy.admin.czyproject.IPC.Messager;
 
 import android.app.Activity;
 import android.content.ComponentName;

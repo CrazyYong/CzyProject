@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -92,9 +93,14 @@
         <activity android:name=".FourComponents.Activity.SecondActivity"/>
         <activity android:name=".FourComponents.FourComponents"/>
 
-        <service android:name=".IPC.MessageService" android:process=":remote"/>
+        <service android:name=".IPC.Messager.MessageService" android:process=":remote"/>
 
-        <activity android:name=".IPC.MessengerActivity"/>
+        <activity android:name=".IPC.Messager.MessengerActivity"/>
+
+        <activity android:name=".IPC.Socket.TCPClientActivity"
+            />
+        <activity android:name=".IPC.IPCActivity"
+            />
     </application>
 
 </manifest>

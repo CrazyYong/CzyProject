@@ -85,5 +85,12 @@
         android:text="IPC"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/main_io_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IO操作"
+        android:textAllCaps="false"
+        />
     </LinearLayout>
 </ScrollView>

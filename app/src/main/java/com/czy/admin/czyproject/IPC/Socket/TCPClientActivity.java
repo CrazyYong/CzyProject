@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.czy.admin.czyproject.R;
+import com.czy.admin.czyproject.Utils.UtilsTool;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,7 +29,7 @@ import java.util.Date;
  * Created by cmx on 2018/3/30.
  */
 
-public class TCPClientActivity extends Activity{
+public class TCPClientActivity extends Activity implements View.OnClickListener{
 
     public static final int MESSAGE_RECEIVE_NEW_MSG = 1;
     public static final int MESSAGE_SOCKET_CONNECTED = 2;
@@ -45,6 +47,7 @@ public class TCPClientActivity extends Activity{
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MESSAGE_RECEIVE_NEW_MSG:
+                    UtilsTool.Log("收到消息~~");
                     txt_tv.setText(txt_tv.getText() + (String) msg.obj);
                     break;
                 case MESSAGE_SOCKET_CONNECTED:
@@ -57,7 +60,9 @@ public class TCPClientActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tcp);
+
         initView();
+
     }
 
 
@@ -66,20 +71,7 @@ public class TCPClientActivity extends Activity{
         txt_tv=(TextView)findViewById(R.id.txt_tv);
         edit_txt=(EditText)findViewById(R.id.edit_txt);
 
-
-        btn_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String msg = edit_txt.getText().toString();
-                if (!TextUtils.isEmpty(msg)) {
-                    mPrintWriter.println(msg);
-                    edit_txt.setText("");
-                    String time = formatDateTime(System.currentTimeMillis());
-                    String showesMsg = "self" + time + ":" + msg + "\n";
-                    txt_tv.setText(txt_tv.getText() + showesMsg);
-                }
-            }
-        });
+        btn_send.setOnClickListener(this);
 
         Intent intent = new Intent(this, TCPServerService.class);
         startService(intent);
@@ -90,6 +82,8 @@ public class TCPClientActivity extends Activity{
                 connectTCPServer();
             }
         }.start();
+
+
     }
 
     private String formatDateTime(long l) {
@@ -113,8 +107,9 @@ public class TCPClientActivity extends Activity{
         Socket socket = null;
         while (socket == null) {
             try {
-                socket = new Socket("localhost", 8688);
+                socket = new Socket("locahost", 8688);
                 mClientSocket = socket;
+
                 mPrintWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
                 handler.sendEmptyMessage(MESSAGE_SOCKET_CONNECTED);
             } catch (IOException e) {
@@ -142,4 +137,21 @@ public class TCPClientActivity extends Activity{
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_send:
+                String msg = edit_txt.getText().toString();
+                if (!TextUtils.isEmpty(msg)) {
+                    UtilsTool.Log("要发送的消息是"+msg);
+                    mPrintWriter.println(msg);
+                    mPrintWriter.flush();
+                    edit_txt.setText("");
+                    String time = formatDateTime(System.currentTimeMillis());
+                    String showesMsg = "self" + time + ":" + msg + "\n";
+                    txt_tv.setText(txt_tv.getText() + showesMsg);
+                    break;
+                }
+        }
+    }
 }

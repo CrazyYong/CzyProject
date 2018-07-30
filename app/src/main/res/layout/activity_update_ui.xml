@@ -4,32 +4,30 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_handler"
+        android:id="@+id/update_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Handler测试"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/btn_update_ui"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android更新UI的几种方式"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/btn_async"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AyyncTask测试"
-        android:textAllCaps="false"
-        />
-    <Button
-        android:id="@+id/btn_java_thread"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Java多线程"
-        android:textAllCaps="false"
+        android:text="方法一"
         />
 
+    <Button
+        android:id="@+id/update_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="方法二"
+        />
+
+    <Button
+        android:id="@+id/update_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="方法三"
+        />
+
+    <Button
+        android:id="@+id/update_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="方法四"
+        />
 </LinearLayout>

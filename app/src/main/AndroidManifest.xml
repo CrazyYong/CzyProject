@@ -101,6 +101,12 @@
             />
         <activity android:name=".IPC.IPCActivity"
             />
+
+        <activity android:name=".ThreadWork.UpdateUIActivity"
+            />
+        <activity android:name=".IO.IOActivity"
+            />
+        <service android:name=".IPC.Socket.TCPServerService" />
     </application>
 
 </manifest>

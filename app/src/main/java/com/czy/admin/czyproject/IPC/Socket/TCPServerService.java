@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.czy.admin.czyproject.Utils.UtilsTool;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -46,6 +48,7 @@ public class TCPServerService extends Service{
 
         @Override
         public void run() {
+            UtilsTool.Log("开启ServerSocket~~~");
             ServerSocket serverSocket = null;
             try {
                 //监听本地8868端口号

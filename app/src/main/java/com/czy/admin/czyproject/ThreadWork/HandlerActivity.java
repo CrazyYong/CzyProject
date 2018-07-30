@@ -38,7 +38,6 @@ public class HandlerActivity extends Activity {
                     Toast.makeText(HandlerActivity.this, "值是多少--" +obj, Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
-
                     break;
             }
 

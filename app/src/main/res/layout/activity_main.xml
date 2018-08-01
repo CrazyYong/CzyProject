@@ -92,5 +92,12 @@
         android:text="IO操作"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/main_reflect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="反射"
+        android:textAllCaps="false"
+        />
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_generictiy_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="泛型类"
+        />
+
+    <Button
+        android:id="@+id/btn_generictiy_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="通配符"
+        />
+
+    <Button
+        android:id="@+id/btn_generictiy_method_arg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="泛型方法与可变参数"
+        />
+
+
+    <TextView
+        android:id="@+id/result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

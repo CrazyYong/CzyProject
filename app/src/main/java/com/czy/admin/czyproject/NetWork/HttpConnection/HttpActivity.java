@@ -159,11 +159,11 @@ public class HttpActivity extends Activity implements HttpResultInterface {
      */
     private void OkhttpGetByGet(){
 
-       //创建okHttpClient对象
+       //1.创建okHttpClient对象
         mOkHttpClient = new OkHttpClient();
-        //创建一个Request
+        //2.创建一个Request
         final Request request = new Request.Builder()
-                .url("https://api.github.com")
+                .url(HttpUtil.WAN_ANDROID_URL)
                 .build();
         com.squareup.okhttp.Call call = mOkHttpClient.newCall(request);
         call.enqueue(new com.squareup.okhttp.Callback() {

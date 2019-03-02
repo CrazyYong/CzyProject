@@ -2,12 +2,13 @@ package com.czy.admin.czyproject.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by czy on 2017/5/5.
  */
 
-public abstract class BaseActivity extends Activity{
+public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract int getLayoutId();
 

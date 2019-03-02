@@ -99,5 +99,12 @@
         android:text="反射"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/main_jetpack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JetPack"
+        android:textAllCaps="false"
+        />
     </LinearLayout>
 </ScrollView>

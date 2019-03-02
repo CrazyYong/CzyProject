@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.czy.admin.czyproject"
-        minSdkVersion 17
-        targetSdkVersion 25
+        minSdkVersion 15
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -18,47 +17,6 @@ android {
     }
 }
 
-
-//创建一个名字为hello的 task
-task hello {
-
-    //创建一个 Action , 添加到 Action 列表的头部
-    doFirst(new Action<Task>() {
-        @Override
-        void execute(Task task) {
-            println "action1++++++++++"
-        }
-    })
-
-    //创建一个 Action , 添加到 Action 列表的头部
-    doFirst {
-        println "action2++++++++++"
-    }
-
-}
-
-//创建Task的另外一种方式
-tasks.create("hello2"){
-    doFirst{
-        println "hello2+++++"
-    }
-}
-
-//自定义DefaultTask子类
-class MyTask extends DefaultTask{
-
-    @TaskAction
-    void action(){
-        println "action1+++++"
-    }
-}
-
-//创建hello3 task
-task hello3(type:MyTask){
-    doLast{
-        println "action2+++++++"
-    }
-}
 
 //八、Task依赖
 //1、dependsOn
@@ -96,17 +54,19 @@ task5.shouldRunAfter task6
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.0'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.squareup.okio:okio:1.5.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.android.support:recyclerview-v7:25.0.1'
-    compile 'com.android.support:design:25.0.1'
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'ru.bartwell:exfilepicker:2.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.0'
+    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.squareup.okhttp:okhttp:2.4.0'
+    implementation 'com.squareup.okio:okio:1.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.android.support:recyclerview-v7:25.0.1'
+    implementation 'com.android.support:design:25.0.1'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'ru.bartwell:exfilepicker:2.1'
+    api "android.arch.lifecycle:runtime:$arch_version"
+    api "android.arch.lifecycle:extensions:$arch_version"
 }

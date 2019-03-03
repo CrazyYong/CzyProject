@@ -11,6 +11,7 @@ import com.czy.admin.czyproject.Gson.GsonActivity;
 import com.czy.admin.czyproject.IPC.IPCActivity;
 import com.czy.admin.czyproject.IPC.Messager.MessengerActivity;
 import com.czy.admin.czyproject.JetPack.JetPackTestActivity;
+import com.czy.admin.czyproject.JetPack.LocationActivity;
 import com.czy.admin.czyproject.Proprety.PropretyActivity;
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.Reflect.ReflectActivity;
@@ -102,7 +103,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 UtilsTool.goActivity(this, ReflectActivity.class);
                 break;
             case R.id.main_jetpack:
-                UtilsTool.goActivity(this, JetPackTestActivity.class);
+                UtilsTool.goActivity(this, LocationActivity.class);
                 break;
             default:
                 break;

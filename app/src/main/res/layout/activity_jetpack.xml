@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    >
+    <data>
+        <variable name="click" type="com.czy.admin.czyproject.jetPack.JetPackActivity"/>
+
+    </data>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-<TextView
-    android:id="@+id/tv_jetpack"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="16sp"
-    android:text="数据是否变化"
-    />
-
     <Button
-        android:id="@+id/btn_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="点击一下看看"
+        android:text="LiveData"
+        android:onClick="@{() -> click.onClick(1)}"
         />
-
     <Button
-        android:id="@+id/btn_click2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="点击下我看看"
+        android:text="DataBinding"
+        android:onClick="@{() -> click.onClick(2)}"
         />
 
 </LinearLayout>
+</layout>

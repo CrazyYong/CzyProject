@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.czy.admin.czyproject.Activity.BaseActivity;
 import com.czy.admin.czyproject.R;
-import com.czy.admin.czyproject.jetPack.viewModel.NameViewModel;
 
 public class LiveDataActivity extends BaseActivity implements View.OnClickListener{
     private NameViewModel model;
@@ -23,29 +22,33 @@ public class LiveDataActivity extends BaseActivity implements View.OnClickListen
         switch (v.getId()){
             case R.id.btn_click:
                 String anotherName = "John Doe";
-                model.getCurrentName().setValue(anotherName);
+                model.getCurrentName().setValue(anotherName);//3:LiveData发送数据，触发监听者发生改变
                 break;
             case R.id.btn_click2:
                 String anotherName2 = "hhhhh";
-                model.getCurrentName().setValue(anotherName2);
+                model.getCurrentName().setValue(anotherName2);//3:LiveData发送数据，触发监听者发生改变
                 break;
         }
     }
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_jetpack;
+        return R.layout.activity_livedata;
     }
 
     @Override
     public void initData() {
+        //1:获取ViewModel
         model = ViewModelProviders.of(this).get(NameViewModel.class);
+
         final Observer<String> nameObserver = new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
+                //当LiveData发送数据的时候,在此处触发改变
                 tv_jetpack.setText(s);
             }
         };
+        //2:LiveData监听数据的改变
         model.getCurrentName().observe(this, nameObserver);
     }
 

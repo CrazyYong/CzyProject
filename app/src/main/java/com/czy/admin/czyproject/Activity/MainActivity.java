@@ -16,6 +16,7 @@ import com.czy.admin.czyproject.FileOperate.FileOperateActivity;
 import com.czy.admin.czyproject.FourComponents.FourComponents;
 import com.czy.admin.czyproject.Gson.GsonActivity;
 import com.czy.admin.czyproject.IPC.IPCActivity;
+import com.czy.admin.czyproject.jetPack.JetPackActivity;
 import com.czy.admin.czyproject.jetPack.dataBinding.DataBindingActivity;
 import com.czy.admin.czyproject.Proprety.PropretyActivity;
 import com.czy.admin.czyproject.R;
@@ -113,7 +114,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 int version ="1.0.3".compareTo("1.0.4");
 //                Log.i("CZYAPP",updateApp("1.2.6","1.2.7")+"");
 //                Log.i("CZYAPP", updateApp2("1.5.6","1.0")+"");
-                UtilsTool.goActivity(this, DataBindingActivity.class);
+                UtilsTool.goActivity(this, JetPackActivity.class);
                 break;
             default:
                 break;

@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.Utils.UtilsTool;
 import com.czy.admin.czyproject.View.CustomView.MyFirstCustomerViewActivity;
+import com.czy.admin.czyproject.View.Dialog.ActivityDialog;
 import com.czy.admin.czyproject.View.DrawerLayout.DrawerLayoutActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentDialog.FragmentDialogActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentMainActivity;
@@ -22,7 +23,9 @@ import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 
 public class ViewActivity extends Activity implements  View.OnClickListener{
     private Button btn_view_recycle,btn_fragment,btn_dialog_fragment,btn_drawerlayout
-            ,btn_navigation,btn_material,btn_customer;
+            ,btn_navigation,btn_material,btn_customer,btn_dialog;
+
+    private ActivityDialog activityDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_navigation=(Button)findViewById(R.id.btn_navigation);
         btn_material=(Button)findViewById(R.id.btn_material);
         btn_customer=(Button)findViewById(R.id.btn_customer);
+        btn_dialog=(Button)findViewById(R.id.btn_dialog);
 
         btn_view_recycle.setOnClickListener(this);
         btn_fragment.setOnClickListener(this);
@@ -43,6 +47,7 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_navigation.setOnClickListener(this);
         btn_material.setOnClickListener(this);
         btn_customer.setOnClickListener(this);
+        btn_dialog.setOnClickListener(this);
     }
 
     @Override
@@ -68,6 +73,14 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
                 break;
             case R.id.btn_customer:
                 UtilsTool.goActivity(this,MyFirstCustomerViewActivity.class);
+                break;
+            case R.id.btn_dialog:
+                View dialogView = getLayoutInflater().inflate(R.layout.activity_dialog, null);
+                activityDialog = new ActivityDialog(this, 0, 0, dialogView, R.style.DialogTheme);
+                activityDialog.setCancelable(true); activityDialog.show();
+
+
+
                 break;
             default:
                 break;

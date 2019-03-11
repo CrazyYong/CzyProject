@@ -1,16 +1,13 @@
-package com.czy.admin.czyproject.JetPack;
+package com.czy.admin.czyproject.jetPack.lifeCycle;
 
-import android.Manifest;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 /**

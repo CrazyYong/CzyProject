@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.JetPack;
+package com.czy.admin.czyproject.jetPack.lifeCycle;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -22,6 +22,12 @@ public class LocationActivity extends AppCompatActivity{
 
     private LocationListener mGpsListener = new MyLocationListener();
 
+    /**
+     * 请求权限
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {

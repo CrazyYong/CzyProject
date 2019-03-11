@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable  name="presenter" type="com.czy.admin.czyproject.jetPack.dataBinding.Presenter"/>
+        <variable  name="user" type="com.czy.admin.czyproject.jetPack.dataBinding.User"/>
+    </data>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00FFFFFF" >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button1"
+        android:onClick="@{() -> presenter.onSaveClick()}"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        android:onClick="@{presenter::onSaveClick1}"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{user.firstName}"
+        />
+
+
+</LinearLayout>
+</layout>

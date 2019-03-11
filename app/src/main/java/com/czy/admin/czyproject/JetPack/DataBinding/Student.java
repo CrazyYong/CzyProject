@@ -1,31 +1,13 @@
-package com.czy.admin.czyproject.JetPack.DataBinding;
+package com.czy.admin.czyproject.jetPack.dataBinding;
+
+import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
 
 /**
- * Created by cpsir on 2019/3/4
+ * @author Create by cpSir on 2019/3/11
  */
 public class Student {
-    public Student(String name, String addr) {
-        this.name = name;
-        this.addr = addr;
-    }
-
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddr() {
-        return addr;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
-
-    private String addr;
+    public final ObservableField<String> phoneNumber = new ObservableField<>();
+    public final ObservableField<String> schoolName = new ObservableField<>();
+    public final ObservableInt age = new ObservableInt();
 }

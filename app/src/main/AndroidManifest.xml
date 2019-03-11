@@ -108,8 +108,11 @@
             />
         <activity android:name=".Reflect.ReflectActivity"
             />
-        <activity android:name=".JetPack.JetPackTestActivity"/>
+        <activity android:name=".jetPack.viewModel.LiveDataActivity"/>
+
         <service android:name=".IPC.Socket.TCPServerService" />
+
+        <activity android:name=".jetPack.dataBinding.DataBindingActivity"/>
     </application>
 
 </manifest>

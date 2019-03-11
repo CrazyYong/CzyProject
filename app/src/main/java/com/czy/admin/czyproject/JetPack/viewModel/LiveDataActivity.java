@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.JetPack;
+package com.czy.admin.czyproject.jetPack.viewModel;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -9,8 +9,9 @@ import android.widget.TextView;
 
 import com.czy.admin.czyproject.Activity.BaseActivity;
 import com.czy.admin.czyproject.R;
+import com.czy.admin.czyproject.jetPack.viewModel.NameViewModel;
 
-public class JetPackTestActivity extends BaseActivity implements View.OnClickListener{
+public class LiveDataActivity extends BaseActivity implements View.OnClickListener{
     private NameViewModel model;
     private TextView tv_jetpack;
     private Button btn_click;

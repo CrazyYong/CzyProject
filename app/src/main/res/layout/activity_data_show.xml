@@ -6,6 +6,9 @@
         <import type="android.view.View"/>
         <variable  name="presenter" type="com.czy.admin.czyproject.jetPack.dataBinding.Presenter"/>
         <variable  name="user" type="com.czy.admin.czyproject.jetPack.dataBinding.User"/>
+        <variable  name="student" type="com.czy.admin.czyproject.jetPack.dataBinding.ObservableIser"/>
+        <variable  name="click" type="com.czy.admin.czyproject.jetPack.dataBinding.DataBindingActivity"/>
+        <variable name="field" type="android.databinding.ObservableField"/>
     </data>
 
 
@@ -28,10 +31,29 @@
         android:text="Button2"
         android:onClick="@{presenter::onSaveClick1}"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button3"
+        android:onClick="@{click::onClick}"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@{user.firstName}"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入内容"
+        android:text="@={student.address}"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{student.address}"
         />
 
 

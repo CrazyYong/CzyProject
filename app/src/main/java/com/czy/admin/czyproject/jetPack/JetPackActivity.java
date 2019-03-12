@@ -9,7 +9,7 @@ import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.Utils.UtilsTool;
 import com.czy.admin.czyproject.databinding.ActivityJetpackBinding;
 import com.czy.admin.czyproject.jetPack.dataBinding.DataBindingActivity;
-import com.czy.admin.czyproject.jetPack.viewModel.LiveDataActivity;
+import com.czy.admin.czyproject.jetPack.liveData.LiveDataActivity;
 
 /**
  * @author Create by cpSir on 2019/3/11

@@ -108,7 +108,7 @@
             />
         <activity android:name=".Reflect.ReflectActivity"
             />
-        <activity android:name=".jetPack.viewModel.LiveDataActivity"/>
+        <activity android:name=".jetPack.liveData.LiveDataActivity"/>
 
         <service android:name=".IPC.Socket.TCPServerService" />
 

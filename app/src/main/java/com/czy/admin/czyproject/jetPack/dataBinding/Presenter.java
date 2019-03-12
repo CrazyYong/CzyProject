@@ -10,6 +10,7 @@ public class Presenter {
 
     public void onSaveClick(){
         Log.i("CZYAPP","onSaveClick");
+
     }
 
     public void onSaveClick1(View view){

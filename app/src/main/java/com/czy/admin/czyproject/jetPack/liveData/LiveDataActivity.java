@@ -1,4 +1,4 @@
-package com.czy.admin.czyproject.jetPack.viewModel;
+package com.czy.admin.czyproject.jetPack.liveData;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;

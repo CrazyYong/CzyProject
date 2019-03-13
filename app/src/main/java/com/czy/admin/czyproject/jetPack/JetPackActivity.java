@@ -12,6 +12,7 @@ import com.czy.admin.czyproject.jetPack.dataBinding.DataBindingActivity;
 import com.czy.admin.czyproject.jetPack.liveData.LiveDataActivity;
 
 /**
+ * 测试中
  * @author Create by cpSir on 2019/3/11
  */
 public class JetPackActivity extends AppCompatActivity {

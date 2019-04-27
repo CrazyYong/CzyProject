@@ -3,6 +3,7 @@ package com.czy.admin.czyproject.jetPack.liveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -48,8 +49,19 @@ public class LiveDataActivity extends BaseActivity implements View.OnClickListen
                 tv_jetpack.setText(s);
             }
         };
+
+
+
         //2:LiveData监听数据的改变
         model.getCurrentName().observe(this, nameObserver);
+
+        model.getNewName().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                Log.i("CZYAPP","newName:"+s);
+            }
+        });
+
     }
 
 

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:first_customer="http://schemas.android.com/apk/res/com.czy.admin.czyproject"
-    android:orientation="vertical" android:layout_width="match_parent"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="ResAuto">
 
@@ -18,5 +21,28 @@
         first_customer:textColor="#000000"
         first_customer:textSize="20sp"
         />
+    <TextView
+        android:id="@+id/btn_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我是测试效果"
+        />
+
+    <Button
+        android:id="@+id/btn_scrollTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scrollTo"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btn_scrollBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scrollBy"
+        android:textAllCaps="false"
+        />
 
 </LinearLayout>
+</layout>

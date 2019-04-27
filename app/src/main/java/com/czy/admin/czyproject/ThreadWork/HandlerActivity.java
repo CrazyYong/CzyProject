@@ -73,6 +73,7 @@ public class HandlerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
+        handler.postDelayed(runnable, 100); //每隔1s执行
         btn_download = (Button) findViewById(R.id.btn_download);
         btn_send_message = (Button) findViewById(R.id.btn_send_message);
         btn_post_message = (Button) findViewById(R.id.btn_post_message);
@@ -162,6 +163,28 @@ public class HandlerActivity extends Activity {
             e.printStackTrace();
         }
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable);
+    }
+
+    Runnable runnable = new Runnable() {
+
+        @Override
+        public void run() {
+            // handler自带方法实现定时器
+            try {
+                handler.postDelayed(this, 100);
+                Log.i("CZYAPP","i");
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    };
 
 
 }

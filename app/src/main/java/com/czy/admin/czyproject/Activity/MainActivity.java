@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.czy.admin.czyproject.ContentProvider.ContentProviderActivity;
@@ -29,6 +30,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private Button main_rxjava_btn,main_gson_btn,main_create_file_btn
            ,main_content_btn
             ,main_view_btn,main_newwork_btn,main_thread_btn,main_proprety_btn,main_components_btn,main_ipc_btn,main_reflect,main_jetpack;
+    private EditText edit_txt;
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -53,6 +55,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         main_ipc_btn=(Button)findViewById(R.id.main_ipc_btn);
         main_reflect=(Button)findViewById(R.id.main_reflect);
         main_jetpack=(Button)findViewById(R.id.main_jetpack);
+        edit_txt=(EditText)findViewById(R.id.edit_txt);
+
     }
 
     @Override

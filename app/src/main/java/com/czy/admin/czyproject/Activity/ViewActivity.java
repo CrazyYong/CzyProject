@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.Utils.UtilsTool;
-import com.czy.admin.czyproject.View.CustomView.MyFirstCustomerViewActivity;
 import com.czy.admin.czyproject.View.Dialog.ActivityDialog;
 import com.czy.admin.czyproject.View.DrawerLayout.DrawerLayoutActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentDialog.FragmentDialogActivity;
@@ -70,9 +69,6 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
                 break;
             case R.id.btn_material:
                 UtilsTool.goActivity(this,MaterialDesignActivity.class);
-                break;
-            case R.id.btn_customer:
-                UtilsTool.goActivity(this,MyFirstCustomerViewActivity.class);
                 break;
             case R.id.btn_dialog:
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_dialog, null);

@@ -2,11 +2,22 @@
     android:layout_width="match_parent"
     android:background="#44ff0000"
     android:layout_height="wrap_content" >
-
+<com.czy.admin.czyproject.View.RecycleView.SwipeMenu
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
     <TextView
         android:id="@+id/id_num"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
         android:text="1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="删除"
+        />
+
+</com.czy.admin.czyproject.View.RecycleView.SwipeMenu>
 </FrameLayout>

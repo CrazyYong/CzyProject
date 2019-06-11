@@ -16,9 +16,18 @@
     <com.czy.admin.czyproject.View.customView.pie.DoubleCircleView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         >
 
     </com.czy.admin.czyproject.View.customView.pie.DoubleCircleView>
+
+    <com.czy.admin.czyproject.View.customView.pie.CheckView
+        android:id="@+id/custom_checkview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    </com.czy.admin.czyproject.View.customView.pie.CheckView>
 
 
 </LinearLayout>

@@ -14,12 +14,15 @@ import java.util.ArrayList;
  */
 public class PieViewActivity extends Activity {
     private PieView custom_pieview;
+    private CheckView mCheckView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pieview);
         custom_pieview=(PieView)findViewById(R.id.custom_pieview);
+        mCheckView=(CheckView)findViewById(R.id.custom_checkview);
+        mCheckView.check();
 
 
 

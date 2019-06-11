@@ -81,7 +81,7 @@
             />
         <activity android:name=".ThreadWork.JavaThreadActivity"/>
 
-        <activity android:name=".View.CustomView.MyFirstCustomerViewActivity"/>
+        <activity android:name=".View.customView.MyFirstCustomerViewActivity"/>
 
         <activity android:name=".FourComponents.Service.ServiceActivity"/>
 
@@ -114,6 +114,8 @@
 
         <activity android:name=".jetPack.dataBinding.DataBindingActivity"/>
         <activity android:name=".jetPack.JetPackActivity"/>
+
+        <activity android:name=".View.customView.PieViewActivity"/>
     </application>
 
 </manifest>

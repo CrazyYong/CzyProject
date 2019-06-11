@@ -61,4 +61,12 @@
         android:text="自定义dialog"
         android:textAllCaps="false"
         />
+
+    <Button
+        android:id="@+id/btn_piew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义饼状图"
+        android:textAllCaps="false"
+        />
 </LinearLayout>

@@ -14,6 +14,8 @@ import com.czy.admin.czyproject.View.Fragment.FragmentMainActivity;
 import com.czy.admin.czyproject.View.MaterialDesign.MaterialDesignActivity;
 import com.czy.admin.czyproject.View.NavigationView.NavigationViewActivity;
 import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
+import com.czy.admin.czyproject.View.customView.MyFirstCustomerViewActivity;
+import com.czy.admin.czyproject.View.customView.PieViewActivity;
 
 /**
  * Created by czy on 2017/6/8.
@@ -22,7 +24,7 @@ import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 
 public class ViewActivity extends Activity implements  View.OnClickListener{
     private Button btn_view_recycle,btn_fragment,btn_dialog_fragment,btn_drawerlayout
-            ,btn_navigation,btn_material,btn_customer,btn_dialog;
+            ,btn_navigation,btn_material,btn_customer,btn_dialog,btn_piew;
 
     private ActivityDialog activityDialog;
 
@@ -38,6 +40,7 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_material=(Button)findViewById(R.id.btn_material);
         btn_customer=(Button)findViewById(R.id.btn_customer);
         btn_dialog=(Button)findViewById(R.id.btn_dialog);
+        btn_piew=(Button)findViewById(R.id.btn_piew);
 
         btn_view_recycle.setOnClickListener(this);
         btn_fragment.setOnClickListener(this);
@@ -47,6 +50,7 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_material.setOnClickListener(this);
         btn_customer.setOnClickListener(this);
         btn_dialog.setOnClickListener(this);
+        btn_piew.setOnClickListener(this);
     }
 
     @Override
@@ -70,13 +74,17 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
             case R.id.btn_material:
                 UtilsTool.goActivity(this,MaterialDesignActivity.class);
                 break;
+            case R.id.btn_customer:
+                UtilsTool.goActivity(this, MyFirstCustomerViewActivity.class);
+                break;
             case R.id.btn_dialog:
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_dialog, null);
                 activityDialog = new ActivityDialog(this, 0, 0, dialogView, R.style.DialogTheme);
                 activityDialog.setCancelable(true); activityDialog.show();
+                break;
 
-
-
+            case R.id.btn_piew:
+                UtilsTool.goActivity(this, PieViewActivity.class);
                 break;
             default:
                 break;

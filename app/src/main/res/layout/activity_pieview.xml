@@ -4,13 +4,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.czy.admin.czyproject.View.customView.PieView
+    <com.czy.admin.czyproject.View.customView.pie.PieView
         android:id="@+id/custom_pieview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:visibility="gone"
         />
 
+
+    <com.czy.admin.czyproject.View.customView.pie.DoubleCircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    </com.czy.admin.czyproject.View.customView.pie.DoubleCircleView>
 
 
 </LinearLayout>

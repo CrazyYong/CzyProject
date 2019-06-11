@@ -15,7 +15,7 @@ import com.czy.admin.czyproject.View.MaterialDesign.MaterialDesignActivity;
 import com.czy.admin.czyproject.View.NavigationView.NavigationViewActivity;
 import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 import com.czy.admin.czyproject.View.customView.MyFirstCustomerViewActivity;
-import com.czy.admin.czyproject.View.customView.PieViewActivity;
+import com.czy.admin.czyproject.View.customView.pie.PieViewActivity;
 
 /**
  * Created by czy on 2017/6/8.

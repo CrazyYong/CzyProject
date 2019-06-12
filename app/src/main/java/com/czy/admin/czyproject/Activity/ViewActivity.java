@@ -15,6 +15,7 @@ import com.czy.admin.czyproject.View.MaterialDesign.MaterialDesignActivity;
 import com.czy.admin.czyproject.View.NavigationView.NavigationViewActivity;
 import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 import com.czy.admin.czyproject.View.customView.MyFirstCustomerViewActivity;
+import com.czy.admin.czyproject.View.customView.path.PathViewActivity;
 import com.czy.admin.czyproject.View.customView.pie.PieViewActivity;
 
 /**
@@ -22,9 +23,10 @@ import com.czy.admin.czyproject.View.customView.pie.PieViewActivity;
  * View页面，用于各种控件页面跳转
  */
 
-public class ViewActivity extends Activity implements  View.OnClickListener{
-    private Button btn_view_recycle,btn_fragment,btn_dialog_fragment,btn_drawerlayout
-            ,btn_navigation,btn_material,btn_customer,btn_dialog,btn_piew;
+public class ViewActivity extends Activity implements View.OnClickListener {
+    private Button btn_view_recycle, btn_fragment,
+            btn_dialog_fragment, btn_drawerlayout,
+            btn_navigation, btn_material, btn_customer, btn_dialog, btn_piew,btn_path;
 
     private ActivityDialog activityDialog;
 
@@ -32,15 +34,16 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
-        btn_view_recycle=(Button)findViewById(R.id.btn_view_recycle);
-        btn_fragment=(Button)findViewById(R.id.btn_fragment);
-        btn_dialog_fragment=(Button)findViewById(R.id.btn_dialog_fragment);
-        btn_drawerlayout=(Button)findViewById(R.id.btn_drawerlayout);
-        btn_navigation=(Button)findViewById(R.id.btn_navigation);
-        btn_material=(Button)findViewById(R.id.btn_material);
-        btn_customer=(Button)findViewById(R.id.btn_customer);
-        btn_dialog=(Button)findViewById(R.id.btn_dialog);
-        btn_piew=(Button)findViewById(R.id.btn_piew);
+        btn_view_recycle = (Button) findViewById(R.id.btn_view_recycle);
+        btn_fragment = (Button) findViewById(R.id.btn_fragment);
+        btn_dialog_fragment = (Button) findViewById(R.id.btn_dialog_fragment);
+        btn_drawerlayout = (Button) findViewById(R.id.btn_drawerlayout);
+        btn_navigation = (Button) findViewById(R.id.btn_navigation);
+        btn_material = (Button) findViewById(R.id.btn_material);
+        btn_customer = (Button) findViewById(R.id.btn_customer);
+        btn_dialog = (Button) findViewById(R.id.btn_dialog);
+        btn_piew = (Button) findViewById(R.id.btn_piew);
+        btn_path=(Button) findViewById(R.id.btn_path);
 
         btn_view_recycle.setOnClickListener(this);
         btn_fragment.setOnClickListener(this);
@@ -51,28 +54,29 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
         btn_customer.setOnClickListener(this);
         btn_dialog.setOnClickListener(this);
         btn_piew.setOnClickListener(this);
+        btn_path.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_view_recycle:
-                UtilsTool.goActivity(this,RecycleViewActivity.class);
+                UtilsTool.goActivity(this, RecycleViewActivity.class);
                 break;
             case R.id.btn_fragment:
-                UtilsTool.goActivity(this,FragmentMainActivity.class);
+                UtilsTool.goActivity(this, FragmentMainActivity.class);
                 break;
             case R.id.btn_dialog_fragment:
-                UtilsTool.goActivity(this,FragmentDialogActivity.class);
+                UtilsTool.goActivity(this, FragmentDialogActivity.class);
                 break;
             case R.id.btn_drawerlayout:
-                UtilsTool.goActivity(this,DrawerLayoutActivity.class);
+                UtilsTool.goActivity(this, DrawerLayoutActivity.class);
                 break;
             case R.id.btn_navigation:
-                UtilsTool.goActivity(this,NavigationViewActivity.class);
+                UtilsTool.goActivity(this, NavigationViewActivity.class);
                 break;
             case R.id.btn_material:
-                UtilsTool.goActivity(this,MaterialDesignActivity.class);
+                UtilsTool.goActivity(this, MaterialDesignActivity.class);
                 break;
             case R.id.btn_customer:
                 UtilsTool.goActivity(this, MyFirstCustomerViewActivity.class);
@@ -80,11 +84,14 @@ public class ViewActivity extends Activity implements  View.OnClickListener{
             case R.id.btn_dialog:
                 View dialogView = getLayoutInflater().inflate(R.layout.activity_dialog, null);
                 activityDialog = new ActivityDialog(this, 0, 0, dialogView, R.style.DialogTheme);
-                activityDialog.setCancelable(true); activityDialog.show();
+                activityDialog.setCancelable(true);
+                activityDialog.show();
                 break;
-
             case R.id.btn_piew:
                 UtilsTool.goActivity(this, PieViewActivity.class);
+                break;
+            case R.id.btn_path:
+                UtilsTool.goActivity(this, PathViewActivity.class);
                 break;
             default:
                 break;

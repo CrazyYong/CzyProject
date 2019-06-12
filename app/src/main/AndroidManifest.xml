@@ -115,6 +115,8 @@
         <activity android:name=".jetPack.JetPackActivity"/>
 
         <activity android:name=".View.customView.pie.PieViewActivity"/>
+
+        <activity android:name=".View.customView.path.PathViewActivity"/>
     </application>
 
 </manifest>

@@ -69,4 +69,12 @@
         android:text="自定义饼状图"
         android:textAllCaps="false"
         />
+
+    <Button
+        android:id="@+id/btn_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定Path"
+        android:textAllCaps="false"
+        />
 </LinearLayout>

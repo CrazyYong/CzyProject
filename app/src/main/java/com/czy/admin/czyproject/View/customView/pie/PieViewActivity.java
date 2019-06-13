@@ -2,6 +2,8 @@ package com.czy.admin.czyproject.View.customView.pie;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.View.customView.pie.PieData;
@@ -23,7 +25,6 @@ public class PieViewActivity extends Activity {
         custom_pieview=(PieView)findViewById(R.id.custom_pieview);
         mCheckView=(CheckView)findViewById(R.id.custom_checkview);
         mCheckView.check();
-
 
 
         ArrayList<PieData> datas = new ArrayList<>();

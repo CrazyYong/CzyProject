@@ -1,6 +1,7 @@
 package com.czy.admin.czyproject.Activity;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +16,10 @@ import com.czy.admin.czyproject.View.MaterialDesign.MaterialDesignActivity;
 import com.czy.admin.czyproject.View.NavigationView.NavigationViewActivity;
 import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 import com.czy.admin.czyproject.View.customView.MyFirstCustomerViewActivity;
+import com.czy.admin.czyproject.View.customView.dispatch.DispatchActivity;
 import com.czy.admin.czyproject.View.customView.path.PathViewActivity;
 import com.czy.admin.czyproject.View.customView.pie.PieViewActivity;
+import com.czy.admin.czyproject.databinding.ActivityViewBinding;
 
 /**
  * Created by czy on 2017/6/8.
@@ -24,37 +27,25 @@ import com.czy.admin.czyproject.View.customView.pie.PieViewActivity;
  */
 
 public class ViewActivity extends Activity implements View.OnClickListener {
-    private Button btn_view_recycle, btn_fragment,
-            btn_dialog_fragment, btn_drawerlayout,
-            btn_navigation, btn_material, btn_customer, btn_dialog, btn_piew,btn_path;
+
 
     private ActivityDialog activityDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view);
-        btn_view_recycle = (Button) findViewById(R.id.btn_view_recycle);
-        btn_fragment = (Button) findViewById(R.id.btn_fragment);
-        btn_dialog_fragment = (Button) findViewById(R.id.btn_dialog_fragment);
-        btn_drawerlayout = (Button) findViewById(R.id.btn_drawerlayout);
-        btn_navigation = (Button) findViewById(R.id.btn_navigation);
-        btn_material = (Button) findViewById(R.id.btn_material);
-        btn_customer = (Button) findViewById(R.id.btn_customer);
-        btn_dialog = (Button) findViewById(R.id.btn_dialog);
-        btn_piew = (Button) findViewById(R.id.btn_piew);
-        btn_path=(Button) findViewById(R.id.btn_path);
-
-        btn_view_recycle.setOnClickListener(this);
-        btn_fragment.setOnClickListener(this);
-        btn_dialog_fragment.setOnClickListener(this);
-        btn_drawerlayout.setOnClickListener(this);
-        btn_navigation.setOnClickListener(this);
-        btn_material.setOnClickListener(this);
-        btn_customer.setOnClickListener(this);
-        btn_dialog.setOnClickListener(this);
-        btn_piew.setOnClickListener(this);
-        btn_path.setOnClickListener(this);
+        ActivityViewBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_view);
+        binding.btnViewRecycle.setOnClickListener(this);
+        binding.btnFragment.setOnClickListener(this);
+        binding.btnDialogFragment.setOnClickListener(this);
+        binding.btnDrawerlayout.setOnClickListener(this);
+        binding.btnNavigation.setOnClickListener(this);
+        binding.btnMaterial.setOnClickListener(this);
+        binding.btnCustomer.setOnClickListener(this);
+        binding.btnDialog.setOnClickListener(this);
+        binding.btnPiew.setOnClickListener(this);
+        binding.btnPath.setOnClickListener(this);
+        binding.btnDispatch.setOnClickListener(this);
     }
 
     @Override
@@ -92,6 +83,9 @@ public class ViewActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_path:
                 UtilsTool.goActivity(this, PathViewActivity.class);
+                break;
+            case R.id.btn_dispatch:
+                UtilsTool.goActivity(this, DispatchActivity.class);
                 break;
             default:
                 break;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.czy.admin.czyproject.View.customView.dispatch.RootView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#4E5268"
+    android:layout_margin="20dp"
+    tools:context=".View.customView.dispatch.DispatchActivity">
+
+    <com.czy.admin.czyproject.View.customView.dispatch.ViewGroupA
+        android:background="#95C3FA"
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+        <com.czy.admin.czyproject.View.customView.dispatch.View1
+            android:background="#BDDA66"
+            android:layout_width="130dp"
+            android:layout_height="130dp"/>
+
+    </com.czy.admin.czyproject.View.customView.dispatch.ViewGroupA>
+
+    <com.czy.admin.czyproject.View.customView.dispatch.View2
+        android:layout_alignParentRight="true"
+        android:background="#BDDA66"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
+</com.czy.admin.czyproject.View.customView.dispatch.RootView>

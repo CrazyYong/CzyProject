@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -77,4 +79,13 @@
         android:text="自定Path"
         android:textAllCaps="false"
         />
+
+    <Button
+        android:id="@+id/btn_dispatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="事件分发"
+        android:textAllCaps="false"
+        />
 </LinearLayout>
+</layout>

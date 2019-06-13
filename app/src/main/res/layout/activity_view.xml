@@ -87,5 +87,13 @@
         android:text="事件分发"
         android:textAllCaps="false"
         />
+
+    <Button
+        android:id="@+id/btn_bezier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="贝塞尔"
+        android:textAllCaps="false"
+        />
 </LinearLayout>
 </layout>

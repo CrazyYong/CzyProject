@@ -119,6 +119,8 @@
         <activity android:name=".View.customView.path.PathViewActivity"/>
 
         <activity android:name=".View.customView.dispatch.DispatchActivity"/>
+
+        <activity android:name=".View.customView.bezier.BezierActivity"/>
     </application>
 
 </manifest>

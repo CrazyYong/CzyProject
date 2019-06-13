@@ -16,6 +16,7 @@ import com.czy.admin.czyproject.View.MaterialDesign.MaterialDesignActivity;
 import com.czy.admin.czyproject.View.NavigationView.NavigationViewActivity;
 import com.czy.admin.czyproject.View.RecycleView.RecycleViewActivity;
 import com.czy.admin.czyproject.View.customView.MyFirstCustomerViewActivity;
+import com.czy.admin.czyproject.View.customView.bezier.BezierActivity;
 import com.czy.admin.czyproject.View.customView.dispatch.DispatchActivity;
 import com.czy.admin.czyproject.View.customView.path.PathViewActivity;
 import com.czy.admin.czyproject.View.customView.pie.PieViewActivity;
@@ -46,6 +47,7 @@ public class ViewActivity extends Activity implements View.OnClickListener {
         binding.btnPiew.setOnClickListener(this);
         binding.btnPath.setOnClickListener(this);
         binding.btnDispatch.setOnClickListener(this);
+        binding.btnBezier.setOnClickListener(this);
     }
 
     @Override
@@ -86,6 +88,9 @@ public class ViewActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_dispatch:
                 UtilsTool.goActivity(this, DispatchActivity.class);
+                break;
+            case R.id.btn_bezier:
+                UtilsTool.goActivity(this, BezierActivity.class);
                 break;
             default:
                 break;

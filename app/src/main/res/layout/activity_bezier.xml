@@ -7,7 +7,22 @@
     <com.czy.admin.czyproject.View.customView.bezier.Bezier
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         >
     </com.czy.admin.czyproject.View.customView.bezier.Bezier>
+
+    <com.czy.admin.czyproject.View.customView.bezier.Bezier2
+        android:id="@+id/btn_bezier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+    </com.czy.admin.czyproject.View.customView.bezier.Bezier2>
+
+    <com.czy.admin.czyproject.View.customView.bezier.Bezier3
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+    </com.czy.admin.czyproject.View.customView.bezier.Bezier3>
 
 </LinearLayout>

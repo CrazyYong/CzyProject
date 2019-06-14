@@ -11,52 +11,67 @@ import android.view.MotionEvent;
 import android.view.View;
 /**
  * @author Create by cpSir on 2019/6/14
- * 两阶贝塞尔
+ * 三阶贝塞尔
  */
-public class Bezier extends View {
+public class Bezier2 extends View {
     private Paint mPaint;
     private int centerX, centerY;
 
-    private PointF start, end, control;
+    private PointF start, end, control1, control2;
+    private boolean mode = true;
 
-    public Bezier(Context context) {
-        super(context);
+    public Bezier2(Context context) {
+        this(context, null);
+
     }
 
-    public Bezier(Context context, AttributeSet attrs) {
+    public Bezier2(Context context, AttributeSet attrs) {
         super(context, attrs);
+
         mPaint = new Paint();
         mPaint.setColor(Color.BLACK);
         mPaint.setStrokeWidth(8);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setTextSize(60);
 
-        start = new PointF(0,0);
-        end = new PointF(0,0);
-        control = new PointF(0,0);
+        start = new PointF(0, 0);
+        end = new PointF(0, 0);
+        control1 = new PointF(0, 0);
+        control2 = new PointF(0, 0);
+    }
+
+    public void setMode(boolean mode) {
+        this.mode = mode;
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
-        centerX = w/2;
-        centerY = h/2;
+        centerX = w / 2;
+        centerY = h / 2;
 
         // 初始化数据点和控制点的位置
-        start.x = centerX-200;
+        start.x = centerX - 200;
         start.y = centerY;
-        end.x = centerX+200;
+        end.x = centerX + 200;
         end.y = centerY;
-        control.x = centerX;
-        control.y = centerY-100;
+        control1.x = centerX;
+        control1.y = centerY - 100;
+        control2.x = centerX;
+        control2.y = centerY - 100;
+
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // 根据触摸位置更新控制点，并提示重绘
-        control.x = event.getX();
-        control.y = event.getY();
+        if (mode) {
+            control1.x = event.getX();
+            control1.y = event.getY();
+        } else {
+            control2.x = event.getX();
+            control2.y = event.getY();
+        }
         invalidate();
         return true;
     }
@@ -64,18 +79,21 @@ public class Bezier extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        //drawCoordinateSystem(canvas);
 
         // 绘制数据点和控制点
         mPaint.setColor(Color.GRAY);
         mPaint.setStrokeWidth(20);
-        canvas.drawPoint(start.x,start.y,mPaint);
-        canvas.drawPoint(end.x,end.y,mPaint);
-        canvas.drawPoint(control.x,control.y,mPaint);
+        canvas.drawPoint(start.x, start.y, mPaint);
+        canvas.drawPoint(end.x, end.y, mPaint);
+        canvas.drawPoint(control1.x, control1.y, mPaint);
+        canvas.drawPoint(control2.x, control2.y, mPaint);
 
         // 绘制辅助线
         mPaint.setStrokeWidth(4);
-        canvas.drawLine(start.x,start.y,control.x,control.y,mPaint);
-        canvas.drawLine(end.x,end.y,control.x,control.y,mPaint);
+        canvas.drawLine(start.x, start.y, control1.x, control1.y, mPaint);
+        canvas.drawLine(control1.x, control1.y,control2.x, control2.y, mPaint);
+        canvas.drawLine(control2.x, control2.y,end.x, end.y, mPaint);
 
         // 绘制贝塞尔曲线
         mPaint.setColor(Color.RED);
@@ -83,8 +101,8 @@ public class Bezier extends View {
 
         Path path = new Path();
 
-        path.moveTo(start.x,start.y);
-        path.quadTo(control.x,control.y,end.x,end.y);
+        path.moveTo(start.x, start.y);
+        path.cubicTo(control1.x, control1.y, control2.x,control2.y, end.x, end.y);
 
         canvas.drawPath(path, mPaint);
     }

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.czy.admin.czyproject.R;
 import com.czy.admin.czyproject.Utils.UtilsTool;
+import com.czy.admin.czyproject.View.ConstarintActivity;
 import com.czy.admin.czyproject.View.Dialog.ActivityDialog;
 import com.czy.admin.czyproject.View.DrawerLayout.DrawerLayoutActivity;
 import com.czy.admin.czyproject.View.Fragment.FragmentDialog.FragmentDialogActivity;
@@ -48,6 +49,7 @@ public class ViewActivity extends Activity implements View.OnClickListener {
         binding.btnPath.setOnClickListener(this);
         binding.btnDispatch.setOnClickListener(this);
         binding.btnBezier.setOnClickListener(this);
+        binding.btnConstraint.setOnClickListener(this);
     }
 
     @Override
@@ -91,6 +93,9 @@ public class ViewActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_bezier:
                 UtilsTool.goActivity(this, BezierActivity.class);
+                break;
+            case R.id.btn_constraint:
+                UtilsTool.goActivity(this, ConstarintActivity.class);
                 break;
             default:
                 break;

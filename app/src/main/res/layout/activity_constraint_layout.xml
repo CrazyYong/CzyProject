@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -125,9 +124,9 @@
         android:background="@color/colorPrimary"
         android:text="TextView10"
         app:layout_constraintHorizontal_weight="3"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/TextView9"
         app:layout_constraintRight_toLeftOf="@+id/TextView11"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextView8" />
 
     <TextView
@@ -137,8 +136,8 @@
         android:background="@color/colorPrimaryDark"
         android:text="TextView11"
         app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/TextView10"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextView8" />
     <!--链式 end-->
 
@@ -149,24 +148,22 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView11"
-        android:text="TextView12"
-        android:gravity="center"
         android:background="@color/colorPrimary"
-        />
+        android:gravity="center"
+        android:text="TextView12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView11" />
 
     <TextView
         android:id="@+id/TextView13"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView12"
-        android:text="TextView12"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        />
+        android:text="TextView13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView12" />
 
     <android.support.constraint.Barrier
         android:id="@+id/barrier"
@@ -181,7 +178,103 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView14"
-        app:layout_constraintTop_toBottomOf="@+id/TextView12"
-        app:layout_constraintLeft_toRightOf="@+id/barrier" />
+        app:layout_constraintLeft_toRightOf="@+id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/TextView12" />
+
+    <!--Group
+Group可以把多个控件归为一组，方便隐藏或显示一组控件，举个例子：
+begin
+    -->
+
+    <TextView
+        android:id="@+id/TextView15"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@color/cardview_shadow_start_color"
+        android:gravity="center"
+        android:text="TextView15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextView13" />
+
+    <TextView
+        android:id="@+id/TextView16"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/cardview_shadow_start_color"
+        android:gravity="center"
+        android:text="TextView16"
+        app:layout_constraintLeft_toRightOf="@+id/TextView15"
+        app:layout_constraintTop_toBottomOf="@+id/TextView13" />
+
+    <TextView
+        android:id="@+id/TextView17"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/cardview_shadow_start_color"
+        android:gravity="center"
+        android:text="TextView17"
+        app:layout_constraintLeft_toRightOf="@+id/TextView16"
+        app:layout_constraintTop_toBottomOf="@+id/TextView13" />
+
+    <!--android:visibility="gone"-->
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="TextView15,TextView16" />
+
+    <!--Group  end.....-->
+
+    <!--Placeholder
+    Placeholder指的是占位符。在Placeholder中可使用setContent()设置另一个控件的id，
+    使这个控件移动到占位符的位置。举个例子：
+    begin
+    -->
+    <android.support.constraint.Placeholder
+        android:id="@+id/placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:content="@+id/TextView18"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TextView17"
+        app:layout_constraintTop_toBottomOf="@+id/TextView17" />
+
+    <TextView
+        android:id="@+id/TextView18"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@color/cardview_shadow_start_color"
+        android:gravity="center"
+        android:text="TextView18" />
+    <!--end.....-->
+
+    <!--Guideline
+    Guildline像辅助线一样，在预览的时候帮助你完成布局（不会显示在界面上）。
+Guildline的主要属性：
+android:orientation 垂直vertical，水平horizontal
+layout_constraintGuide_begin 开始位置
+layout_constraintGuide_end 结束位置
+layout_constraintGuide_percent 距离顶部的百分比(orientation = horizontal时则为距离左边)
+
+    begin
+    -->
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!--end...-->
 
 </android.support.constraint.ConstraintLayout>

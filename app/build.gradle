@@ -78,6 +78,7 @@ dependencies {
     implementation 'com.android.support:design:25.0.1'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'ru.bartwell:exfilepicker:2.1'
-    api "android.arch.lifecycle:runtime:$arch_version"
-    api "android.arch.lifecycle:extensions:$arch_version"
+    implementation "android.arch.lifecycle:runtime:$arch_version"
+    implementation "android.arch.lifecycle:extensions:$arch_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
